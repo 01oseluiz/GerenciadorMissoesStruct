@@ -1,0 +1,2 @@
+class RkNinja < ApplicationRecord
+end

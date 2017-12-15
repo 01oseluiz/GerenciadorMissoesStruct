@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cometario:</strong>
+  <%= @comentario.cometario %>
+</p>
+
+<p>
+  <strong>Id missao:</strong>
+  <%= @comentario.ID_missao %>
+</p>
+
+<p>
+  <strong>Id pessoa:</strong>
+  <%= @comentario.ID_pessoa %>
+</p>
+
+<%= link_to 'Edit', edit_comentario_path(@comentario) %> |
+<%= link_to 'Back', :back %>

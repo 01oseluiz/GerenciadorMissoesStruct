@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nomeEq: MyString
+  mediaEq: 1
+  mb_1: 1
+  mb_2: 1
+  mb_3: 1
+  mb_S: 1
+
+two:
+  nomeEq: MyString
+  mediaEq: 1
+  mb_1: 1
+  mb_2: 1
+  mb_3: 1
+  mb_S: 1

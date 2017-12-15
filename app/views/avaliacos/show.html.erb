@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Avaliacao:</strong>
+  <%= @avaliaco.avaliacao %>
+</p>
+
+<p>
+  <strong>Id avaliado:</strong>
+  <%= @avaliaco.ID_avaliado %>
+</p>
+
+<p>
+  <strong>Id avaliador:</strong>
+  <%= @avaliaco.ID_avaliador %>
+</p>
+
+<%= link_to 'Edit', edit_avaliaco_path(@avaliaco) %> |
+<%= link_to 'Back', :back %>

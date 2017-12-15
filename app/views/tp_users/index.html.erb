@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Tp Users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tipo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tp_users.each do |tp_user| %>
+      <tr>
+        <td><%= tp_user.tipo %></td>
+        <td><%= link_to 'Show', tp_user %></td>
+        <td><%= link_to 'Edit', edit_tp_user_path(tp_user) %></td>
+        <td><%= link_to 'Destroy', tp_user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tp User', new_tp_user_path %>

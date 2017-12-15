@@ -1,0 +1,2 @@
+class Misso < ApplicationRecord
+end

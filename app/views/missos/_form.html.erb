@@ -1,0 +1,47 @@
+<%= form_with(model: misso, local: true) do |form| %>
+  <% if misso.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(misso.errors.count, "error") %> prohibited this misso from being saved:</h2>
+
+      <ul>
+      <% misso.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nome %>
+    <%= form.text_field :nome, id: :misso_nome %>
+  </div>
+
+  <div class="field">
+    <%= form.label :local %>
+    <%= form.text_field :local, id: :misso_local %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ID_nv %>
+    <%= form.number_field :ID_nv, id: :misso_ID_nv %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ID_equipe %>
+    <%= form.number_field :ID_equipe, id: :misso_ID_equipe %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ID_pessoa %>
+    <%= form.number_field :ID_pessoa, id: :misso_ID_pessoa %>
+  </div>
+
+  <div class="field">
+    <%= form.label :preco %>
+    <%= form.text_field :preco, id: :misso_preco %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

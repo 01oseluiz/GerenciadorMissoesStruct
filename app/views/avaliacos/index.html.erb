@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Avaliacos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Avaliacao</th>
+      <th>Id avaliado</th>
+      <th>Id avaliador</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @avaliacos.each do |avaliaco| %>
+      <tr>
+        <td><%= avaliaco.avaliacao %></td>
+        <td><%= avaliaco.ID_avaliado %></td>
+        <td><%= avaliaco.ID_avaliador %></td>
+        <td><%= link_to 'Show', avaliaco %></td>
+        <td><%= link_to 'Edit', edit_avaliaco_path(avaliaco) %></td>
+        <td><%= link_to 'Destroy', avaliaco, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Avaliaco', new_avaliaco_path %>

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cometario: MyString
+  ID_missao: 1
+  ID_pessoa: 1
+
+two:
+  cometario: MyString
+  ID_missao: 1
+  ID_pessoa: 1

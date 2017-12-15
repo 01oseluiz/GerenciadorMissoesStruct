@@ -1,0 +1,22 @@
+<%= form_with(model: rk_ninja, local: true) do |form| %>
+  <% if rk_ninja.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(rk_ninja.errors.count, "error") %> prohibited this rk_ninja from being saved:</h2>
+
+      <ul>
+      <% rk_ninja.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :rank %>
+    <%= form.text_field :rank, id: :rk_ninja_rank %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

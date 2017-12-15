@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nome: MyString
+  local: MyString
+  ID_nv: 1
+  ID_equipe: 1
+  ID_pessoa: 1
+  preco: 1.5
+
+two:
+  nome: MyString
+  local: MyString
+  ID_nv: 1
+  ID_equipe: 1
+  ID_pessoa: 1
+  preco: 1.5

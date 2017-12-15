@@ -1,0 +1,2 @@
+class TpUser < ApplicationRecord
+end

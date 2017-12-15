@@ -1,0 +1,2 @@
+module RkNinjasHelper
+end

@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @misso.nome %>
+</p>
+
+<p>
+  <strong>Local:</strong>
+  <%= @misso.local %>
+</p>
+
+<p>
+  <strong>Id nv:</strong>
+  <%= @misso.ID_nv %>
+</p>
+
+<p>
+  <strong>Id equipe:</strong>
+  <%= @misso.ID_equipe %>
+</p>
+
+<p>
+  <strong>Id pessoa:</strong>
+  <%= @misso.ID_pessoa %>
+</p>
+
+<p>
+  <strong>Preco:</strong>
+  <%= @misso.preco %>
+</p>
+
+<%= link_to 'Edit', edit_misso_path(@misso) %> |
+<%= link_to 'Back', :back %>

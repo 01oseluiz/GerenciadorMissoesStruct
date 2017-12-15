@@ -1,0 +1,27 @@
+<%= form_with(model: nv_dific, local: true) do |form| %>
+  <% if nv_dific.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(nv_dific.errors.count, "error") %> prohibited this nv_dific from being saved:</h2>
+
+      <ul>
+      <% nv_dific.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nivel %>
+    <%= form.text_field :nivel, id: :nv_dific_nivel %>
+  </div>
+
+  <div class="field">
+    <%= form.label :preco %>
+    <%= form.text_field :preco, id: :nv_dific_preco %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

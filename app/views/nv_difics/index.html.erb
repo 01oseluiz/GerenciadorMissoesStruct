@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Nv Difics</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nivel</th>
+      <th>Preco</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @nv_difics.each do |nv_dific| %>
+      <tr>
+        <td><%= nv_dific.nivel %></td>
+        <td><%= nv_dific.preco %></td>
+        <td><%= link_to 'Show', nv_dific %></td>
+        <td><%= link_to 'Edit', edit_nv_dific_path(nv_dific) %></td>
+        <td><%= link_to 'Destroy', nv_dific, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Nv Dific', new_nv_dific_path %>
