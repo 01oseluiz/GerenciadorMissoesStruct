@@ -1,62 +1,67 @@
 <%= form_with(model: pessoa, local: true) do |form| %>
-  <% if pessoa.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(pessoa.errors.count, "error") %> prohibited this pessoa from being saved:</h2>
+    <% if pessoa.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(pessoa.errors.count, "error") %> prohibited this pessoa from being saved:</h2>
 
-      <ul>
-      <% pessoa.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+          <ul>
+            <% pessoa.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+      <%= form.label :nome %>
+      <%= form.text_field :nome, id: :pessoa_nome %>
     </div>
-  <% end %>
 
-  <div class="field">
-    <%= form.label :nome %>
-    <%= form.text_field :nome, id: :pessoa_nome %>
-  </div>
+    <div class="field">
+      <%= form.label :identidade %>
+      <%= form.text_field :identidade, id: :pessoa_identidade %>
+    </div>
 
-  <div class="field">
-    <%= form.label :telefone %>
-    <%= form.number_field :telefone, id: :pessoa_telefone %>
-  </div>
+    <div class="field">
+      <%= form.label :telefone %>
+      <%= form.number_field :telefone, id: :pessoa_telefone %>
+    </div>
 
-  <div class="field">
-    <%= form.label :dataNasc %>
-    <%= form.text_field :dataNasc, id: :pessoa_dataNasc %>
-  </div>
+    <div class="field">
+      <%= form.label :dataNasc %>
+      <%= form.date_select :dataNasc, id: :pessoa_dataNasc %>
+    </div>
 
-  <div class="field">
-    <%= form.label :endereco %>
-    <%= form.text_field :endereco, id: :pessoa_endereco %>
-  </div>
+    <div class="field">
+      <%= form.label :endereco %>
+      <%= form.text_field :endereco, id: :pessoa_endereco %>
+    </div>
 
-  <div class="field">
-    <%= form.label :user_name %>
-    <%= form.text_field :user_name, id: :pessoa_user_name %>
-  </div>
+    <div class="field">
+      <%= form.label :user_name %>
+      <%= form.text_field :user_name, id: :pessoa_user_name %>
+    </div>
 
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email, id: :pessoa_email %>
-  </div>
+    <div class="field">
+      <%= form.label :email %>
+      <%= form.text_field :email, id: :pessoa_email %>
+    </div>
 
-  <div class="field">
-    <%= form.label :senha %>
-    <%= form.text_field :senha, id: :pessoa_senha %>
-  </div>
+    <div class="field">
+      <%= form.label :senha %>
+      <%= form.text_field :senha, id: :pessoa_senha %>
+    </div>
 
-  <div class="field">
-    <%= form.label :ID_Rk %>
-    <%= form.number_field :ID_Rk, id: :pessoa_ID_Rk %>
-  </div>
+    <div class="field">
+      <%= form.label :ID_Rk %>
+      <%= form.number_field :ID_Rk, id: :pessoa_ID_Rk %>
+    </div>
 
-  <div class="field">
-    <%= form.label :ID_tp %>
-    <%= form.number_field :ID_tp, id: :pessoa_ID_tp %>
-  </div>
+    <div class="field">
+      <%= form.label :ID_tp %>
+      <%= form.number_field :ID_tp, id: :pessoa_ID_tp %>
+    </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+    <div class="actions">
+      <%= form.submit %>
+    </div>
 <% end %>
