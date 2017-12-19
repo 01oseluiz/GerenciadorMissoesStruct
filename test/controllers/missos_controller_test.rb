@@ -17,7 +17,7 @@ class MissosControllerTest < ActionDispatch::IntegrationTest
 
   test "should create misso" do
     assert_difference('Misso.count') do
-      post missos_url, params: { misso: { ID_equipe: @misso.ID_equipe, ID_nv: @misso.ID_nv, ID_pessoa: @misso.ID_pessoa, local: @misso.local, nome: @misso.nome, preco: @misso.preco } }
+      post missos_url, params: { misso: {equipe_id: @misso.ID_equipe, nv_dific_id: @misso.ID_nv, pessoa_id: @misso.ID_pessoa, local: @misso.local, nome: @misso.nome, preco: @misso.preco } }
     end
 
     assert_redirected_to misso_url(Misso.last)
@@ -34,7 +34,7 @@ class MissosControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update misso" do
-    patch misso_url(@misso), params: { misso: { ID_equipe: @misso.ID_equipe, ID_nv: @misso.ID_nv, ID_pessoa: @misso.ID_pessoa, local: @misso.local, nome: @misso.nome, preco: @misso.preco } }
+    patch misso_url(@misso), params: { misso: {equipe_id: @misso.ID_equipe, nv_dific_id: @misso.ID_nv, pessoa_id: @misso.ID_pessoa, local: @misso.local, nome: @misso.nome, preco: @misso.preco } }
     assert_redirected_to misso_url(@misso)
   end
 

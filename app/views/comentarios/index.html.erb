@@ -16,8 +16,8 @@
     <% @comentarios.each do |comentario| %>
       <tr>
         <td><%= comentario.cometario %></td>
-        <td><%= comentario.ID_missao %></td>
-        <td><%= comentario.ID_pessoa %></td>
+        <td><%= comentario.misso_id %></td>
+        <td><%= comentario.pessoa_id %></td>
         <td><%= link_to 'Show', comentario %></td>
         <td><%= link_to 'Edit', edit_comentario_path(comentario) %></td>
         <td><%= link_to 'Destroy', comentario, method: :delete, data: { confirm: 'Are you sure?' } %></td>

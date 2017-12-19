@@ -69,6 +69,6 @@ class AvaliacosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def avaliaco_params
-      params.require(:avaliaco).permit(:avaliacao, :ID_avaliado, :ID_avaliador)
+      params.require(:avaliaco).permit(:avaliacao, :avaliado_id, :avaliador_id)
     end
 end

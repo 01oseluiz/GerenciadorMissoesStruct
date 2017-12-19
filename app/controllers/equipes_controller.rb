@@ -78,7 +78,7 @@ class EquipesController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def equipe_params
-    params.require(:equipe).permit(:nomeEq, :mediaEq, :mb_1, :mb_2, :mb_3, :mb_S)
+    params.require(:equipe).permit(:nomeEq, :mediaEq, :mb_1_id, :mb_2_id, :mb_3_id, :mb_S_id)
   end
 
   # Valida a equipe quanto a sua composicao
@@ -106,7 +106,7 @@ médicos, sendo um deles o superior, e 1 ninja chuunin ou jounin.')
 
   # verifica se ha um medico na equipe
   def is_medico_membro(equipe)
-    membros = [equipe.mb_1, equipe.mb_2, equipe.mb_3, equipe.mb_S]
+    membros = [equipe.mb_1_id, equipe.mb_2_id, equipe.mb_3_id, equipe.mb_S_id]
     val_is_medico = false
 
     for i in 0..3
@@ -120,7 +120,7 @@ médicos, sendo um deles o superior, e 1 ninja chuunin ou jounin.')
 
   # verifica se a equipe e uma equipe com 3 medicos e um Chunnin ou Jounin
   def is_medico_equipe(equipe)
-    membros = [equipe.mb_1, equipe.mb_2, equipe.mb_3, equipe.mb_S]
+    membros = [equipe.mb_1_id, equipe.mb_2_id, equipe.mb_3_id, equipe.mb_S_id]
     count_medicos = 0
 
     for i in 0..3
@@ -137,7 +137,7 @@ médicos, sendo um deles o superior, e 1 ninja chuunin ou jounin.')
 
   # Verifica se a equipe e formada por anbus
   def is_anbu_equipe(equipe)
-    membros = [equipe.mb_1, equipe.mb_2, equipe.mb_3, equipe.mb_S]
+    membros = [equipe.mb_1_id, equipe.mb_2_id, equipe.mb_3_id, equipe.mb_S_id]
     val_is_anbu = true
 
     for i in 0..3
@@ -147,7 +147,7 @@ médicos, sendo um deles o superior, e 1 ninja chuunin ou jounin.')
 
   #verifica se o raikage e um membro da equipe
   def is_raikage_membro(equipe)
-    membros = [equipe.mb_1, equipe.mb_2, equipe.mb_3, equipe.mb_S]
+    membros = [equipe.mb_1_id, equipe.mb_2_id, equipe.mb_3_id, equipe.mb_S_id]
     val_is_raikage = false
 
     for i in 0..3

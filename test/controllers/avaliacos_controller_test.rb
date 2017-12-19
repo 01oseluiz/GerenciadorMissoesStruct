@@ -17,7 +17,7 @@ class AvaliacosControllerTest < ActionDispatch::IntegrationTest
 
   test "should create avaliaco" do
     assert_difference('Avaliaco.count') do
-      post avaliacos_url, params: { avaliaco: { ID_avaliado: @avaliaco.ID_avaliado, ID_avaliador: @avaliaco.ID_avaliador, avaliacao: @avaliaco.avaliacao } }
+      post avaliacos_url, params: { avaliaco: {avaliado_id: @avaliaco.ID_avaliado, avaliador_id: @avaliaco.ID_avaliador, avaliacao: @avaliaco.avaliacao } }
     end
 
     assert_redirected_to avaliaco_url(Avaliaco.last)
@@ -34,7 +34,7 @@ class AvaliacosControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update avaliaco" do
-    patch avaliaco_url(@avaliaco), params: { avaliaco: { ID_avaliado: @avaliaco.ID_avaliado, ID_avaliador: @avaliaco.ID_avaliador, avaliacao: @avaliaco.avaliacao } }
+    patch avaliaco_url(@avaliaco), params: { avaliaco: {avaliado_id: @avaliaco.ID_avaliado, avaliador_id: @avaliaco.ID_avaliador, avaliacao: @avaliaco.avaliacao } }
     assert_redirected_to avaliaco_url(@avaliaco)
   end
 

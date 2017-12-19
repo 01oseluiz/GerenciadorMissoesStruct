@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   get 'main_page/index'
   get 'main_page/table'
   root 'main_page#index'
@@ -6,7 +7,6 @@ Rails.application.routes.draw do
   resources :pessoas
   resources :tp_users
   resources :rk_ninjas
-
   resources :nv_difics
   resources :missos
   resources :equipes

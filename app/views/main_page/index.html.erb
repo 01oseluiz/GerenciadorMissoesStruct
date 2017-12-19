@@ -1,6 +1,4 @@
 <h1>Bem Vindo a Villa da Nuvem!</h1>
-<h2>Login</h2>
-<h5><%= link_to 'Criar Conta', new_pessoa_path %></h5>
 
 <table>
   <tr>
@@ -22,10 +20,10 @@
             <tr>
               <td><%= count %></td>
               <td><%= link_to equipe.nomeEq, equipe_path(equipe) %></td>
-              <td><%= link_to equipe.get_membro(equipe.mb_1), pessoa_path(equipe.mb_1) %></td>
-              <td><%= link_to equipe.get_membro(equipe.mb_2), pessoa_path(equipe.mb_2) %></td>
-              <td><%= link_to equipe.get_membro(equipe.mb_3), pessoa_path(equipe.mb_3) %></td>
-              <td><%= link_to equipe.get_membro(equipe.mb_S), pessoa_path(equipe.mb_S) %></td>
+              <td><%= link_to equipe.get_membro(equipe.mb_1_id), pessoa_path(equipe.mb_1_id) %></td>
+              <td><%= link_to equipe.get_membro(equipe.mb_2_id), pessoa_path(equipe.mb_2_id) %></td>
+              <td><%= link_to equipe.get_membro(equipe.mb_3_id), pessoa_path(equipe.mb_3_id) %></td>
+              <td><%= link_to equipe.get_membro(equipe.mb_S_id), pessoa_path(equipe.mb_S_id) %></td>
               <td><%= pontuacao %></td>
             </tr>
         <% end %>

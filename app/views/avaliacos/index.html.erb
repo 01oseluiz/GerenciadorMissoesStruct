@@ -16,8 +16,8 @@
     <% @avaliacos.each do |avaliaco| %>
       <tr>
         <td><%= avaliaco.avaliacao %></td>
-        <td><%= avaliaco.ID_avaliado %></td>
-        <td><%= avaliaco.ID_avaliador %></td>
+        <td><%= avaliaco.avaliado_id %></td>
+        <td><%= avaliaco.avaliador_id %></td>
         <td><%= link_to 'Show', avaliaco %></td>
         <td><%= link_to 'Edit', edit_avaliaco_path(avaliaco) %></td>
         <td><%= link_to 'Destroy', avaliaco, method: :delete, data: { confirm: 'Are you sure?' } %></td>

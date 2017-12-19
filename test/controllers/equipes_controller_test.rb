@@ -17,7 +17,7 @@ class EquipesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create equipe" do
     assert_difference('Equipe.count') do
-      post equipes_url, params: { equipe: { mb_1: @equipe.mb_1, mb_2: @equipe.mb_2, mb_3: @equipe.mb_3, mb_S: @equipe.mb_S, mediaEq: @equipe.mediaEq, nomeEq: @equipe.nomeEq } }
+      post equipes_url, params: { equipe: {mb_1_id: @equipe.mb_1, mb_2_id: @equipe.mb_2, mb_3_id: @equipe.mb_3, mb_S_id: @equipe.mb_S, mediaEq: @equipe.mediaEq, nomeEq: @equipe.nomeEq } }
     end
 
     assert_redirected_to equipe_url(Equipe.last)
@@ -34,7 +34,7 @@ class EquipesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update equipe" do
-    patch equipe_url(@equipe), params: { equipe: { mb_1: @equipe.mb_1, mb_2: @equipe.mb_2, mb_3: @equipe.mb_3, mb_S: @equipe.mb_S, mediaEq: @equipe.mediaEq, nomeEq: @equipe.nomeEq } }
+    patch equipe_url(@equipe), params: { equipe: {mb_1_id: @equipe.mb_1, mb_2_id: @equipe.mb_2, mb_3_id: @equipe.mb_3, mb_S_id: @equipe.mb_S, mediaEq: @equipe.mediaEq, nomeEq: @equipe.nomeEq } }
     assert_redirected_to equipe_url(@equipe)
   end
 

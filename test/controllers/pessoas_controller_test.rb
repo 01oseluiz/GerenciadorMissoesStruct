@@ -17,7 +17,7 @@ class PessoasControllerTest < ActionDispatch::IntegrationTest
 
   test "should create pessoa" do
     assert_difference('Pessoa.count') do
-      post pessoas_url, params: { pessoa: { ID_Rk: @pessoa.ID_Rk, ID_tp: @pessoa.ID_tp, dataNasc: @pessoa.dataNasc, email: @pessoa.email, endereco: @pessoa.endereco, mediaAv: @pessoa.mediaAv, nome: @pessoa.nome, senha: @pessoa.senha, telefone: @pessoa.telefone, user_name: @pessoa.user_name } }
+      post pessoas_url, params: { pessoa: {rk_ninja_id: @pessoa.ID_Rk, tp_user_id: @pessoa.ID_tp, dataNasc: @pessoa.dataNasc, email: @pessoa.email, endereco: @pessoa.endereco, mediaAv: @pessoa.mediaAv, nome: @pessoa.nome, senha: @pessoa.senha, telefone: @pessoa.telefone, user_name: @pessoa.user_name } }
     end
 
     assert_redirected_to pessoa_url(Pessoa.last)
@@ -34,7 +34,7 @@ class PessoasControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update pessoa" do
-    patch pessoa_url(@pessoa), params: { pessoa: { ID_Rk: @pessoa.ID_Rk, ID_tp: @pessoa.ID_tp, dataNasc: @pessoa.dataNasc, email: @pessoa.email, endereco: @pessoa.endereco, mediaAv: @pessoa.mediaAv, nome: @pessoa.nome, senha: @pessoa.senha, telefone: @pessoa.telefone, user_name: @pessoa.user_name } }
+    patch pessoa_url(@pessoa), params: { pessoa: {rk_ninja_id: @pessoa.ID_Rk, tp_user_id: @pessoa.ID_tp, dataNasc: @pessoa.dataNasc, email: @pessoa.email, endereco: @pessoa.endereco, mediaAv: @pessoa.mediaAv, nome: @pessoa.nome, senha: @pessoa.senha, telefone: @pessoa.telefone, user_name: @pessoa.user_name } }
     assert_redirected_to pessoa_url(@pessoa)
   end
 

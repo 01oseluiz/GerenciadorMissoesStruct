@@ -22,7 +22,7 @@ class Equipe < ApplicationRecord
   def calc_missoes_pontuacao(equipe)
     pontuacao = 0
     for i in 1..5
-      pontuacao += Misso.where(ID_equipe: equipe.ID_equipe, ID_nv: i).size * (6-i)
+      pontuacao += Misso.where(equipe_id: equipe.id, nv_dific_id: i).size * (6-i)
     end
     pontuacao -= (5 - equipe.mediaEq) * 2.5
 

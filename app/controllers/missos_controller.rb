@@ -69,6 +69,6 @@ class MissosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def misso_params
-      params.require(:misso).permit(:nome, :local, :ID_nv, :ID_equipe, :ID_pessoa, :preco)
+      params.require(:misso).permit(:nome, :local, :nv_dific_id, :equipe_id, :pessoa_id, :preco)
     end
 end

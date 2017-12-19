@@ -10052,3 +10052,1402 @@ Processing by EquipesController#index as HTML
 Completed 200 OK in 90ms (Views: 85.0ms | ActiveRecord: 1.4ms)
 
 
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddDeviseToPessoas (20171219012011)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.2ms)[0m  [1m[35mALTER TABLE "pessoas" ADD "email" varchar DEFAULT '' NOT NULL[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "pessoas" ADD "encrypted_password" varchar DEFAULT '' NOT NULL[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "pessoas" ADD "reset_password_token" varchar[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "pessoas" ADD "reset_password_sent_at" datetime[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "pessoas" ADD "remember_created_at" datetime[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "pessoas" ADD "sign_in_count" integer DEFAULT 0 NOT NULL[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "pessoas" ADD "current_sign_in_at" datetime[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "pessoas" ADD "last_sign_in_at" datetime[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "pessoas" ADD "current_sign_in_ip" varchar[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "pessoas" ADD "last_sign_in_ip" varchar[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='sqlite_autoindex_pessoas_2' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='sqlite_autoindex_pessoas_2' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='sqlite_autoindex_pessoas_1' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='sqlite_autoindex_pessoas_1' AND type='index'
+[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_pessoas_on_email" ON "pessoas" ("email")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_pessoas_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_pessoas_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='sqlite_autoindex_pessoas_2' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='sqlite_autoindex_pessoas_2' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='sqlite_autoindex_pessoas_1' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='sqlite_autoindex_pessoas_1' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_pessoas_on_reset_password_token" ON "pessoas" ("reset_password_token")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171219012011"]]
+  [1m[35m (77.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='sqlite_autoindex_equipes_1' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='sqlite_autoindex_equipes_1' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='sqlite_autoindex_nv_difics_1' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='sqlite_autoindex_nv_difics_1' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_pessoas_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_pessoas_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_pessoas_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_pessoas_on_email' AND type='index'
+[0m
+  [1m[35m (0.7ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='sqlite_autoindex_pessoas_2' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='sqlite_autoindex_pessoas_2' AND type='index'
+[0m
+  [1m[35m (0.4ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='sqlite_autoindex_pessoas_1' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='sqlite_autoindex_pessoas_1' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='sqlite_autoindex_rk_ninjas_1' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='sqlite_autoindex_rk_ninjas_1' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='sqlite_autoindex_tp_users_1' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='sqlite_autoindex_tp_users_1' AND type='index'
+[0m
+Started GET "/" for 127.0.0.1 at 2017-12-18 23:38:57 -0200
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainPageController#index as HTML
+  [1m[36mEquipe Load (0.3ms)[0m  [1m[34mSELECT "equipes".* FROM "equipes"[0m
+  Rendering main_page/index.html.erb within layouts/application
+  Rendered main_page/index.html.erb within layouts/application (13.9ms)
+Completed 200 OK in 683ms (Views: 655.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/pessoas/sign_out" for 127.0.0.1 at 2017-12-18 23:39:02 -0200
+Processing by PessoasController#show as HTML
+  Parameters: {"id"=>"sign_out"}
+  [1m[36mPessoa Load (0.5ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+Completed 401 Unauthorized in 27ms (ActiveRecord: 2.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Pessoa with 'id'=sign_out):
+  
+app/controllers/pessoas_controller.rb:68:in `set_pessoa'
+Started GET "/" for 127.0.0.1 at 2017-12-18 23:39:32 -0200
+Processing by MainPageController#index as HTML
+  [1m[36mEquipe Load (0.2ms)[0m  [1m[34mSELECT "equipes".* FROM "equipes"[0m
+  Rendering main_page/index.html.erb within layouts/application
+  Rendered main_page/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 57ms (Views: 53.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/pessoas/sign_out" for 127.0.0.1 at 2017-12-18 23:39:34 -0200
+Processing by PessoasController#show as HTML
+  Parameters: {"id"=>"sign_out"}
+  [1m[36mPessoa Load (0.2ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Pessoa with 'id'=sign_out):
+  
+app/controllers/pessoas_controller.rb:68:in `set_pessoa'
+Started GET "/" for 127.0.0.1 at 2017-12-18 23:39:58 -0200
+Processing by MainPageController#index as HTML
+  [1m[36mEquipe Load (0.4ms)[0m  [1m[34mSELECT "equipes".* FROM "equipes"[0m
+  Rendering main_page/index.html.erb within layouts/application
+  Rendered main_page/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 67ms (Views: 63.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/pessoas/sign_out" for 127.0.0.1 at 2017-12-18 23:40:00 -0200
+Processing by PessoasController#show as HTML
+  Parameters: {"id"=>"sign_out"}
+  [1m[36mPessoa Load (0.2ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Pessoa with 'id'=sign_out):
+  
+app/controllers/pessoas_controller.rb:68:in `set_pessoa'
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='sqlite_autoindex_equipes_1' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='sqlite_autoindex_equipes_1' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='sqlite_autoindex_nv_difics_1' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='sqlite_autoindex_nv_difics_1' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_pessoas_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_pessoas_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_pessoas_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_pessoas_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='sqlite_autoindex_pessoas_2' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='sqlite_autoindex_pessoas_2' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='sqlite_autoindex_pessoas_1' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='sqlite_autoindex_pessoas_1' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='sqlite_autoindex_rk_ninjas_1' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='sqlite_autoindex_rk_ninjas_1' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='sqlite_autoindex_tp_users_1' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='sqlite_autoindex_tp_users_1' AND type='index'
+[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='sqlite_autoindex_equipes_1' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='sqlite_autoindex_equipes_1' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='sqlite_autoindex_nv_difics_1' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='sqlite_autoindex_nv_difics_1' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='sqlite_autoindex_pessoas_2' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='sqlite_autoindex_pessoas_2' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='sqlite_autoindex_pessoas_1' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='sqlite_autoindex_pessoas_1' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='sqlite_autoindex_rk_ninjas_1' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='sqlite_autoindex_rk_ninjas_1' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='sqlite_autoindex_tp_users_1' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='sqlite_autoindex_tp_users_1' AND type='index'
+[0m
+Started GET "/" for 127.0.0.1 at 2017-12-18 23:46:44 -0200
+Processing by MainPageController#index as HTML
+  [1m[36mEquipe Load (0.3ms)[0m  [1m[34mSELECT "equipes".* FROM "equipes"[0m
+  Rendering main_page/index.html.erb within layouts/application
+  Rendered main_page/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 66ms (Views: 43.7ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/pessoas/sign_out" for 127.0.0.1 at 2017-12-18 23:46:48 -0200
+Processing by PessoasController#show as HTML
+  Parameters: {"id"=>"sign_out"}
+  [1m[36mPessoa Load (0.4ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+Completed 401 Unauthorized in 7ms (ActiveRecord: 1.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Pessoa with 'id'=sign_out):
+  
+app/controllers/pessoas_controller.rb:68:in `set_pessoa'
+Started GET "/pessoas/sign_out" for 127.0.0.1 at 2017-12-18 23:46:52 -0200
+Processing by PessoasController#show as HTML
+  Parameters: {"id"=>"sign_out"}
+  [1m[36mPessoa Load (0.3ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Pessoa with 'id'=sign_out):
+  
+app/controllers/pessoas_controller.rb:68:in `set_pessoa'
+Started GET "/pessoas/sign_out" for 127.0.0.1 at 2017-12-18 23:46:53 -0200
+Processing by PessoasController#show as HTML
+  Parameters: {"id"=>"sign_out"}
+  [1m[36mPessoa Load (0.2ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Pessoa with 'id'=sign_out):
+  
+app/controllers/pessoas_controller.rb:68:in `set_pessoa'
+Started GET "/pessoas/sign_out" for 127.0.0.1 at 2017-12-18 23:46:54 -0200
+Processing by PessoasController#show as HTML
+  Parameters: {"id"=>"sign_out"}
+  [1m[36mPessoa Load (0.2ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Pessoa with 'id'=sign_out):
+  
+app/controllers/pessoas_controller.rb:68:in `set_pessoa'
+Started GET "/pessoas/sign_out" for 127.0.0.1 at 2017-12-18 23:46:55 -0200
+Processing by PessoasController#show as HTML
+  Parameters: {"id"=>"sign_out"}
+  [1m[36mPessoa Load (0.3ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Pessoa with 'id'=sign_out):
+  
+app/controllers/pessoas_controller.rb:68:in `set_pessoa'
+Started GET "/pessoas/sign_out" for 127.0.0.1 at 2017-12-18 23:46:55 -0200
+Processing by PessoasController#show as HTML
+  Parameters: {"id"=>"sign_out"}
+  [1m[36mPessoa Load (0.1ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Pessoa with 'id'=sign_out):
+  
+app/controllers/pessoas_controller.rb:68:in `set_pessoa'
+Started GET "/pessoas/sign_out" for 127.0.0.1 at 2017-12-18 23:46:56 -0200
+Processing by PessoasController#show as HTML
+  Parameters: {"id"=>"sign_out"}
+  [1m[36mPessoa Load (0.2ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Pessoa with 'id'=sign_out):
+  
+app/controllers/pessoas_controller.rb:68:in `set_pessoa'
+Started GET "/pessoas/sign_in" for 127.0.0.1 at 2017-12-18 23:46:59 -0200
+Processing by PessoasController#show as HTML
+  Parameters: {"id"=>"sign_in"}
+  [1m[36mPessoa Load (0.2ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Pessoa with 'id'=sign_in):
+  
+app/controllers/pessoas_controller.rb:68:in `set_pessoa'
+Started GET "/" for 127.0.0.1 at 2017-12-18 23:47:03 -0200
+Processing by MainPageController#index as HTML
+  [1m[36mEquipe Load (0.3ms)[0m  [1m[34mSELECT "equipes".* FROM "equipes"[0m
+  Rendering main_page/index.html.erb within layouts/application
+  Rendered main_page/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 66ms (Views: 62.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/main_page/table" for 127.0.0.1 at 2017-12-18 23:47:07 -0200
+Processing by MainPageController#table as HTML
+  Rendering main_page/table.html.erb within layouts/application
+  Rendered main_page/table.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 58ms (Views: 56.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pessoas" for 127.0.0.1 at 2017-12-18 23:47:16 -0200
+Processing by PessoasController#index as HTML
+  Rendering pessoas/index.html.erb within layouts/application
+  [1m[36mPessoa Load (0.3ms)[0m  [1m[34mSELECT "pessoas".* FROM "pessoas"[0m
+  Rendered pessoas/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 75ms (Views: 53.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/pessoas/new" for 127.0.0.1 at 2017-12-18 23:47:17 -0200
+Processing by PessoasController#new as HTML
+  Rendering pessoas/new.html.erb within layouts/application
+  Rendered pessoas/_form.html.erb (166.4ms)
+  Rendered pessoas/new.html.erb within layouts/application (170.7ms)
+Completed 200 OK in 274ms (Views: 236.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/pessoas" for 127.0.0.1 at 2017-12-18 23:47:52 -0200
+Processing by PessoasController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ggOxMhjsaIjX4KgtxEodcRAvUEP9BGdGNDl1IKlE+iWv98fTej9akVFJPXMlbPwbrLZP5Fx8hZ8x6FV/zhfKmg==", "pessoa"=>{"nome"=>"teste1", "identidade"=>"1234", "telefone"=>"1234", "dataNasc(1i)"=>"2017", "dataNasc(2i)"=>"12", "dataNasc(3i)"=>"19", "endereco"=>"teste", "user_name"=>"teste", "email"=>"teste", "senha"=>"teste", "rk_ninja_id"=>"1", "tp_user_id"=>"1"}, "commit"=>"Create Pessoa"}
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'email' for Pessoa.):
+  
+app/controllers/pessoas_controller.rb:27:in `create'
+Started POST "/pessoas" for 127.0.0.1 at 2017-12-18 23:48:07 -0200
+Processing by PessoasController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ggOxMhjsaIjX4KgtxEodcRAvUEP9BGdGNDl1IKlE+iWv98fTej9akVFJPXMlbPwbrLZP5Fx8hZ8x6FV/zhfKmg==", "pessoa"=>{"nome"=>"teste1", "identidade"=>"1234", "telefone"=>"1234", "dataNasc(1i)"=>"2017", "dataNasc(2i)"=>"12", "dataNasc(3i)"=>"19", "endereco"=>"teste", "user_name"=>"teste", "email"=>"", "senha"=>"teste", "rk_ninja_id"=>"1", "tp_user_id"=>"1"}, "commit"=>"Create Pessoa"}
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'email' for Pessoa.):
+  
+app/controllers/pessoas_controller.rb:27:in `create'
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='sqlite_autoindex_equipes_1' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='sqlite_autoindex_equipes_1' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='sqlite_autoindex_nv_difics_1' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='sqlite_autoindex_nv_difics_1' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='sqlite_autoindex_pessoas_2' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='sqlite_autoindex_pessoas_2' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='sqlite_autoindex_pessoas_1' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='sqlite_autoindex_pessoas_1' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='sqlite_autoindex_rk_ninjas_1' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='sqlite_autoindex_rk_ninjas_1' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='sqlite_autoindex_tp_users_1' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='sqlite_autoindex_tp_users_1' AND type='index'
+[0m
+Started POST "/pessoas" for 127.0.0.1 at 2017-12-18 23:49:30 -0200
+Processing by PessoasController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ggOxMhjsaIjX4KgtxEodcRAvUEP9BGdGNDl1IKlE+iWv98fTej9akVFJPXMlbPwbrLZP5Fx8hZ8x6FV/zhfKmg==", "pessoa"=>{"nome"=>"teste1", "identidade"=>"1234", "telefone"=>"1234", "dataNasc(1i)"=>"2017", "dataNasc(2i)"=>"12", "dataNasc(3i)"=>"19", "endereco"=>"teste", "user_name"=>"teste", "email"=>"teste", "senha"=>"teste", "rk_ninja_id"=>"1", "tp_user_id"=>"1"}, "commit"=>"Create Pessoa"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "pessoas" ("nome", "identidade", "telefone", "dataNasc", "endereco", "user_name", "rk_ninja_id", "tp_user_id", "email", "senha") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["nome", "teste1"], ["identidade", 1234], ["telefone", 1234], ["dataNasc", "2017-12-19"], ["endereco", "teste"], ["user_name", "teste"], ["rk_ninja_id", 1], ["tp_user_id", 1], ["email", "teste"], ["senha", "teste"]]
+  [1m[35m (65.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/pessoas/1
+Completed 302 Found in 96ms (ActiveRecord: 67.2ms)
+
+
+Started GET "/pessoas/1" for 127.0.0.1 at 2017-12-18 23:49:30 -0200
+Processing by PessoasController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPessoa Load (0.4ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pessoas/show.html.erb within layouts/application
+  [1m[36mRkNinja Load (0.2ms)[0m  [1m[34mSELECT  "rk_ninjas".* FROM "rk_ninjas" WHERE "rk_ninjas"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTpUser Load (0.2ms)[0m  [1m[34mSELECT  "tp_users".* FROM "tp_users" WHERE "tp_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered pessoas/show.html.erb within layouts/application (35.4ms)
+Completed 200 OK in 114ms (Views: 78.8ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/pessoas/new" for 127.0.0.1 at 2017-12-18 23:49:32 -0200
+Processing by PessoasController#new as HTML
+  Rendering pessoas/new.html.erb within layouts/application
+  Rendered pessoas/_form.html.erb (10.4ms)
+  Rendered pessoas/new.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 79ms (Views: 76.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/pessoas" for 127.0.0.1 at 2017-12-18 23:49:52 -0200
+Processing by PessoasController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"O/VybUYBYkDNpvScV1q/K7zqH8kWYusISgscIqoLAXAWAQSMJNJQWUsPYcK2fF5BAHMAbrcaCdFP2jx9zVgxzw==", "pessoa"=>{"nome"=>"teste", "identidade"=>"56789", "telefone"=>"45678", "dataNasc(1i)"=>"2017", "dataNasc(2i)"=>"12", "dataNasc(3i)"=>"19", "endereco"=>"fghjkl", "user_name"=>"ftghjk", "email"=>"tygubhjk", "senha"=>"ryfghbjn", "rk_ninja_id"=>"3", "tp_user_id"=>"3"}, "commit"=>"Create Pessoa"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.8ms)[0m  [1m[32mINSERT INTO "pessoas" ("nome", "identidade", "telefone", "dataNasc", "endereco", "user_name", "rk_ninja_id", "tp_user_id", "email", "senha") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["nome", "teste"], ["identidade", 56789], ["telefone", 45678], ["dataNasc", "2017-12-19"], ["endereco", "fghjkl"], ["user_name", "ftghjk"], ["rk_ninja_id", 3], ["tp_user_id", 3], ["email", "tygubhjk"], ["senha", "ryfghbjn"]]
+  [1m[35m (112.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/pessoas/2
+Completed 302 Found in 124ms (ActiveRecord: 115.2ms)
+
+
+Started GET "/pessoas/2" for 127.0.0.1 at 2017-12-18 23:49:52 -0200
+Processing by PessoasController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPessoa Load (0.2ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering pessoas/show.html.erb within layouts/application
+  [1m[36mRkNinja Load (0.1ms)[0m  [1m[34mSELECT  "rk_ninjas".* FROM "rk_ninjas" WHERE "rk_ninjas"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTpUser Load (0.1ms)[0m  [1m[34mSELECT  "tp_users".* FROM "tp_users" WHERE "tp_users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered pessoas/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 55ms (Views: 53.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/pessoas/new" for 127.0.0.1 at 2017-12-18 23:49:59 -0200
+Processing by PessoasController#new as HTML
+  Rendering pessoas/new.html.erb within layouts/application
+  Rendered pessoas/_form.html.erb (8.4ms)
+  Rendered pessoas/new.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 71ms (Views: 69.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/pessoas" for 127.0.0.1 at 2017-12-18 23:50:11 -0200
+Processing by PessoasController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"o7JmcU3rqBOHsjtPeMsyVsbDV7LqAaBi+Q/3uaR34F+ORhCQLziaCgEbrhGZ7dM8elpIFUt5Qrv83tfmwyTQ4A==", "pessoa"=>{"nome"=>"itygkbjk", "identidade"=>"r65987", "telefone"=>"9876", "dataNasc(1i)"=>"2017", "dataNasc(2i)"=>"12", "dataNasc(3i)"=>"19", "endereco"=>"iughvjbn", "user_name"=>"uoiyfugvjhb", "email"=>"yutfigvhjbkn", "senha"=>"drtfguij", "rk_ninja_id"=>"3", "tp_user_id"=>"3"}, "commit"=>"Create Pessoa"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "pessoas" ("nome", "identidade", "telefone", "dataNasc", "endereco", "user_name", "rk_ninja_id", "tp_user_id", "email", "senha") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["nome", "itygkbjk"], ["identidade", 0], ["telefone", 9876], ["dataNasc", "2017-12-19"], ["endereco", "iughvjbn"], ["user_name", "uoiyfugvjhb"], ["rk_ninja_id", 3], ["tp_user_id", 3], ["email", "yutfigvhjbkn"], ["senha", "drtfguij"]]
+  [1m[35m (92.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/pessoas/3
+Completed 302 Found in 103ms (ActiveRecord: 94.7ms)
+
+
+Started GET "/pessoas/3" for 127.0.0.1 at 2017-12-18 23:50:12 -0200
+Processing by PessoasController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPessoa Load (0.2ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering pessoas/show.html.erb within layouts/application
+  [1m[36mRkNinja Load (0.2ms)[0m  [1m[34mSELECT  "rk_ninjas".* FROM "rk_ninjas" WHERE "rk_ninjas"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTpUser Load (0.1ms)[0m  [1m[34mSELECT  "tp_users".* FROM "tp_users" WHERE "tp_users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered pessoas/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 45ms (Views: 42.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/pessoas/new" for 127.0.0.1 at 2017-12-18 23:50:13 -0200
+Processing by PessoasController#new as HTML
+  Rendering pessoas/new.html.erb within layouts/application
+  Rendered pessoas/_form.html.erb (9.5ms)
+  Rendered pessoas/new.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 66ms (Views: 64.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/pessoas" for 127.0.0.1 at 2017-12-18 23:50:32 -0200
+Processing by PessoasController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SUr9+RBMcFgixG8oeoh2Vo/Gr73XNFSq11rDLpkyoftkvosYcp9CQaRt+nabrpc8M1+wGnZMtnPSi+Nx/mGRRA==", "pessoa"=>{"nome"=>"nbg", "identidade"=>"908765", "telefone"=>"129347", "dataNasc(1i)"=>"2017", "dataNasc(2i)"=>"12", "dataNasc(3i)"=>"19", "endereco"=>"trfghvjbhkuy", "user_name"=>"rtfgvkj", "email"=>"iipç9uo8yguh", "senha"=>"oi7tgylb", "rk_ninja_id"=>"3", "tp_user_id"=>"3"}, "commit"=>"Create Pessoa"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "pessoas" ("nome", "identidade", "telefone", "dataNasc", "endereco", "user_name", "rk_ninja_id", "tp_user_id", "email", "senha") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["nome", "nbg"], ["identidade", 908765], ["telefone", 129347], ["dataNasc", "2017-12-19"], ["endereco", "trfghvjbhkuy"], ["user_name", "rtfgvkj"], ["rk_ninja_id", 3], ["tp_user_id", 3], ["email", "iipç9uo8yguh"], ["senha", "oi7tgylb"]]
+  [1m[35m (120.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/pessoas/4
+Completed 302 Found in 125ms (ActiveRecord: 120.8ms)
+
+
+Started GET "/pessoas/4" for 127.0.0.1 at 2017-12-18 23:50:32 -0200
+Processing by PessoasController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPessoa Load (0.2ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering pessoas/show.html.erb within layouts/application
+  [1m[36mRkNinja Load (0.1ms)[0m  [1m[34mSELECT  "rk_ninjas".* FROM "rk_ninjas" WHERE "rk_ninjas"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTpUser Load (0.1ms)[0m  [1m[34mSELECT  "tp_users".* FROM "tp_users" WHERE "tp_users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered pessoas/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 61ms (Views: 58.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/pessoas/new" for 127.0.0.1 at 2017-12-18 23:50:35 -0200
+Processing by PessoasController#new as HTML
+  Rendering pessoas/new.html.erb within layouts/application
+  Rendered pessoas/_form.html.erb (10.6ms)
+  Rendered pessoas/new.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 82ms (Views: 80.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-18 23:50:38 -0200
+Processing by MainPageController#index as HTML
+  [1m[36mEquipe Load (0.2ms)[0m  [1m[34mSELECT "equipes".* FROM "equipes"[0m
+  Rendering main_page/index.html.erb within layouts/application
+  Rendered main_page/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 77ms (Views: 59.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/main_page/table" for 127.0.0.1 at 2017-12-18 23:50:41 -0200
+Processing by MainPageController#table as HTML
+  Rendering main_page/table.html.erb within layouts/application
+  Rendered main_page/table.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 55ms (Views: 53.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pessoas" for 127.0.0.1 at 2017-12-18 23:50:42 -0200
+Processing by PessoasController#index as HTML
+  Rendering pessoas/index.html.erb within layouts/application
+  [1m[36mPessoa Load (0.4ms)[0m  [1m[34mSELECT "pessoas".* FROM "pessoas"[0m
+  [1m[36mRkNinja Load (0.2ms)[0m  [1m[34mSELECT  "rk_ninjas".* FROM "rk_ninjas" WHERE "rk_ninjas"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTpUser Load (0.2ms)[0m  [1m[34mSELECT  "tp_users".* FROM "tp_users" WHERE "tp_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRkNinja Load (0.2ms)[0m  [1m[34mSELECT  "rk_ninjas".* FROM "rk_ninjas" WHERE "rk_ninjas"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTpUser Load (0.2ms)[0m  [1m[34mSELECT  "tp_users".* FROM "tp_users" WHERE "tp_users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE RkNinja Load (0.0ms)[0m  [1m[34mSELECT  "rk_ninjas".* FROM "rk_ninjas" WHERE "rk_ninjas"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE TpUser Load (0.0ms)[0m  [1m[34mSELECT  "tp_users".* FROM "tp_users" WHERE "tp_users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE RkNinja Load (0.0ms)[0m  [1m[34mSELECT  "rk_ninjas".* FROM "rk_ninjas" WHERE "rk_ninjas"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE TpUser Load (0.0ms)[0m  [1m[34mSELECT  "tp_users".* FROM "tp_users" WHERE "tp_users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered pessoas/index.html.erb within layouts/application (15.2ms)
+Completed 200 OK in 86ms (Views: 82.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/pessoas/1/edit" for 127.0.0.1 at 2017-12-18 23:50:45 -0200
+Processing by PessoasController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPessoa Load (0.3ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pessoas/edit.html.erb within layouts/application
+  Rendered pessoas/_form.html.erb (8.3ms)
+  Rendered pessoas/edit.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 70ms (Views: 55.4ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/pessoas/1" for 127.0.0.1 at 2017-12-18 23:50:51 -0200
+Processing by PessoasController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"22B3jwhueylu3m+FkKbgWT4zvK2YrW6vY9Go3ixa8wYE/+mkfIxT0dXFhqzMOu1hsTRgAqvX3RAzSIoYW2vGJQ==", "pessoa"=>{"nome"=>"teste1", "identidade"=>"1234", "telefone"=>"1234", "dataNasc(1i)"=>"2017", "dataNasc(2i)"=>"12", "dataNasc(3i)"=>"19", "endereco"=>"teste", "user_name"=>"teste", "email"=>"teste", "senha"=>"teste", "rk_ninja_id"=>"3", "tp_user_id"=>"3"}, "commit"=>"Update Pessoa", "id"=>"1"}
+  [1m[36mPessoa Load (0.2ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "pessoas" SET "rk_ninja_id" = ?, "tp_user_id" = ? WHERE "pessoas"."id" = ?[0m  [["rk_ninja_id", 3], ["tp_user_id", 3], ["id", 1]]
+  [1m[35m (141.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/pessoas/1
+Completed 302 Found in 152ms (ActiveRecord: 142.2ms)
+
+
+Started GET "/pessoas/1" for 127.0.0.1 at 2017-12-18 23:50:51 -0200
+Processing by PessoasController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPessoa Load (0.2ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pessoas/show.html.erb within layouts/application
+  [1m[36mRkNinja Load (0.2ms)[0m  [1m[34mSELECT  "rk_ninjas".* FROM "rk_ninjas" WHERE "rk_ninjas"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTpUser Load (0.1ms)[0m  [1m[34mSELECT  "tp_users".* FROM "tp_users" WHERE "tp_users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered pessoas/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 70ms (Views: 67.3ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/pessoas/1" for 127.0.0.1 at 2017-12-18 23:51:23 -0200
+Processing by PessoasController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"22B3jwhueylu3m+FkKbgWT4zvK2YrW6vY9Go3ixa8wYE/+mkfIxT0dXFhqzMOu1hsTRgAqvX3RAzSIoYW2vGJQ==", "pessoa"=>{"nome"=>"teste1", "identidade"=>"1234", "telefone"=>"1234", "dataNasc(1i)"=>"2017", "dataNasc(2i)"=>"12", "dataNasc(3i)"=>"19", "endereco"=>"teste", "user_name"=>"teste", "email"=>"teste", "senha"=>"teste", "rk_ninja_id"=>"3", "tp_user_id"=>"3"}, "commit"=>"Update Pessoa", "id"=>"1"}
+  [1m[36mPessoa Load (0.4ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/pessoas/1
+Completed 302 Found in 8ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/pessoas/1" for 127.0.0.1 at 2017-12-18 23:51:23 -0200
+Processing by PessoasController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPessoa Load (0.2ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pessoas/show.html.erb within layouts/application
+  [1m[36mRkNinja Load (0.1ms)[0m  [1m[34mSELECT  "rk_ninjas".* FROM "rk_ninjas" WHERE "rk_ninjas"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTpUser Load (0.1ms)[0m  [1m[34mSELECT  "tp_users".* FROM "tp_users" WHERE "tp_users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered pessoas/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 51ms (Views: 47.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-18 23:51:27 -0200
+Processing by MainPageController#index as HTML
+  [1m[36mEquipe Load (0.3ms)[0m  [1m[34mSELECT "equipes".* FROM "equipes"[0m
+  Rendering main_page/index.html.erb within layouts/application
+  Rendered main_page/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 61ms (Views: 58.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/main_page/table" for 127.0.0.1 at 2017-12-18 23:51:29 -0200
+Processing by MainPageController#table as HTML
+  Rendering main_page/table.html.erb within layouts/application
+  Rendered main_page/table.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 54ms (Views: 51.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/equipes" for 127.0.0.1 at 2017-12-18 23:51:30 -0200
+Processing by EquipesController#index as HTML
+  Rendering equipes/index.html.erb within layouts/application
+  [1m[36mEquipe Load (0.3ms)[0m  [1m[34mSELECT "equipes".* FROM "equipes"[0m
+  Rendered equipes/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 61ms (Views: 58.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/equipes/new" for 127.0.0.1 at 2017-12-18 23:51:32 -0200
+Processing by EquipesController#new as HTML
+  Rendering equipes/new.html.erb within layouts/application
+  Rendered equipes/_form.html.erb (5.7ms)
+  Rendered equipes/new.html.erb within layouts/application (21.3ms)
+Completed 200 OK in 87ms (Views: 77.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/equipes" for 127.0.0.1 at 2017-12-18 23:51:44 -0200
+Processing by EquipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"555cXZLv72rIMPHTDjuqR4oZiWxLUoeOqFNc6uX6yp1FEUpNFlo+LstdaE1f9NrwVNXW4KUp3y12cE5mZG4TMg==", "equipe"=>{"nomeEq"=>"tew", "mediaEq"=>"", "mb_1_id"=>"1", "mb_2_id"=>"2", "mb_3_id"=>"3", "mb_S_id"=>"4"}, "commit"=>"Create Equipe"}
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `mb_1' for #<Equipe:0x00007fd9a42c8d98>):
+  
+app/controllers/equipes_controller.rb:150:in `is_raikage_membro'
+app/controllers/equipes_controller.rb:87:in `validar_equipe'
+app/controllers/equipes_controller.rb:29:in `create'
+Started GET "/equipes" for 127.0.0.1 at 2017-12-18 23:52:58 -0200
+Processing by EquipesController#index as HTML
+  Rendering equipes/index.html.erb within layouts/application
+  [1m[36mEquipe Load (0.2ms)[0m  [1m[34mSELECT "equipes".* FROM "equipes"[0m
+  Rendered equipes/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 50ms (Views: 46.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/equipes" for 127.0.0.1 at 2017-12-18 23:53:05 -0200
+Processing by EquipesController#index as HTML
+  Rendering equipes/index.html.erb within layouts/application
+  [1m[36mEquipe Load (0.2ms)[0m  [1m[34mSELECT "equipes".* FROM "equipes"[0m
+  Rendered equipes/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 62ms (Views: 60.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/equipes/new" for 127.0.0.1 at 2017-12-18 23:53:06 -0200
+Processing by EquipesController#new as HTML
+  Rendering equipes/new.html.erb within layouts/application
+  Rendered equipes/_form.html.erb (5.7ms)
+  Rendered equipes/new.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 76ms (Views: 63.8ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/equipes" for 127.0.0.1 at 2017-12-18 23:53:12 -0200
+Processing by EquipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SuCi/MvnWIvj7YQYFMl3mf/83AJ9f3cr4hzfAmjHIOPob7TsT1KJz+CAHYZFBgcuITCDjpMEL4g8P82O6VP5TA==", "equipe"=>{"nomeEq"=>"ter'", "mediaEq"=>"", "mb_1_id"=>"1", "mb_2_id"=>"2", "mb_3_id"=>"3", "mb_S_id"=>"4"}, "commit"=>"Create Equipe"}
+  [1m[36mPessoa Load (0.3ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRkNinja Load (0.2ms)[0m  [1m[34mSELECT  "rk_ninjas".* FROM "rk_ninjas" WHERE "rk_ninjas"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPessoa Load (0.1ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE RkNinja Load (0.0ms)[0m  [1m[34mSELECT  "rk_ninjas".* FROM "rk_ninjas" WHERE "rk_ninjas"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPessoa Load (0.2ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE RkNinja Load (0.0ms)[0m  [1m[34mSELECT  "rk_ninjas".* FROM "rk_ninjas" WHERE "rk_ninjas"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPessoa Load (0.1ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE RkNinja Load (0.0ms)[0m  [1m[34mSELECT  "rk_ninjas".* FROM "rk_ninjas" WHERE "rk_ninjas"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Pessoa Load (0.0ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE RkNinja Load (0.0ms)[0m  [1m[34mSELECT  "rk_ninjas".* FROM "rk_ninjas" WHERE "rk_ninjas"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Pessoa Load (0.0ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE RkNinja Load (0.0ms)[0m  [1m[34mSELECT  "rk_ninjas".* FROM "rk_ninjas" WHERE "rk_ninjas"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Pessoa Load (0.0ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE RkNinja Load (0.0ms)[0m  [1m[34mSELECT  "rk_ninjas".* FROM "rk_ninjas" WHERE "rk_ninjas"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Pessoa Load (0.0ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE RkNinja Load (0.0ms)[0m  [1m[34mSELECT  "rk_ninjas".* FROM "rk_ninjas" WHERE "rk_ninjas"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Pessoa Load (0.0ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE RkNinja Load (0.0ms)[0m  [1m[34mSELECT  "rk_ninjas".* FROM "rk_ninjas" WHERE "rk_ninjas"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Pessoa Load (0.0ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE RkNinja Load (0.0ms)[0m  [1m[34mSELECT  "rk_ninjas".* FROM "rk_ninjas" WHERE "rk_ninjas"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Pessoa Load (0.0ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE RkNinja Load (0.0ms)[0m  [1m[34mSELECT  "rk_ninjas".* FROM "rk_ninjas" WHERE "rk_ninjas"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Pessoa Load (0.0ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE RkNinja Load (0.0ms)[0m  [1m[34mSELECT  "rk_ninjas".* FROM "rk_ninjas" WHERE "rk_ninjas"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "equipes" ("nomeEq", "mb_1_id", "mb_2_id", "mb_3_id", "mb_S_id") VALUES (?, ?, ?, ?, ?)[0m  [["nomeEq", "ter'"], ["mb_1_id", 1], ["mb_2_id", 2], ["mb_3_id", 3], ["mb_S_id", 4]]
+  [1m[35m (64.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/equipes/18
+Completed 302 Found in 113ms (ActiveRecord: 67.7ms)
+
+
+Started GET "/equipes/18" for 127.0.0.1 at 2017-12-18 23:53:12 -0200
+Processing by EquipesController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mEquipe Load (0.3ms)[0m  [1m[34mSELECT  "equipes".* FROM "equipes" WHERE "equipes"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering equipes/show.html.erb within layouts/application
+  [1m[36mPessoa Load (0.1ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPessoa Load (0.1ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPessoa Load (0.1ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPessoa Load (0.1ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered equipes/show.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 56ms (Views: 53.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/pessoas/1" for 127.0.0.1 at 2017-12-18 23:53:16 -0200
+Processing by PessoasController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPessoa Load (0.2ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pessoas/show.html.erb within layouts/application
+  [1m[36mRkNinja Load (0.3ms)[0m  [1m[34mSELECT  "rk_ninjas".* FROM "rk_ninjas" WHERE "rk_ninjas"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTpUser Load (0.2ms)[0m  [1m[34mSELECT  "tp_users".* FROM "tp_users" WHERE "tp_users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered pessoas/show.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 63ms (Views: 59.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/pessoas/2" for 127.0.0.1 at 2017-12-18 23:53:18 -0200
+Processing by PessoasController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPessoa Load (0.2ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering pessoas/show.html.erb within layouts/application
+  [1m[36mRkNinja Load (0.2ms)[0m  [1m[34mSELECT  "rk_ninjas".* FROM "rk_ninjas" WHERE "rk_ninjas"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTpUser Load (0.1ms)[0m  [1m[34mSELECT  "tp_users".* FROM "tp_users" WHERE "tp_users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered pessoas/show.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 60ms (Views: 56.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/equipes/new" for 127.0.0.1 at 2017-12-18 23:53:22 -0200
+Processing by EquipesController#new as HTML
+  Rendering equipes/new.html.erb within layouts/application
+  Rendered equipes/_form.html.erb (5.9ms)
+  Rendered equipes/new.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 74ms (Views: 72.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/equipes" for 127.0.0.1 at 2017-12-18 23:53:25 -0200
+Processing by EquipesController#index as HTML
+  Rendering equipes/index.html.erb within layouts/application
+  [1m[36mEquipe Load (0.3ms)[0m  [1m[34mSELECT "equipes".* FROM "equipes"[0m
+  [1m[36mPessoa Load (0.1ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPessoa Load (0.2ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPessoa Load (0.1ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPessoa Load (0.1ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered equipes/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 63ms (Views: 60.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/equipes/18" for 127.0.0.1 at 2017-12-18 23:53:27 -0200
+Processing by EquipesController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mEquipe Load (0.2ms)[0m  [1m[34mSELECT  "equipes".* FROM "equipes" WHERE "equipes"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering equipes/show.html.erb within layouts/application
+  [1m[36mPessoa Load (0.2ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPessoa Load (0.1ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPessoa Load (0.2ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPessoa Load (0.2ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered equipes/show.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 66ms (Views: 62.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-18 23:53:33 -0200
+Processing by MainPageController#index as HTML
+  [1m[36mEquipe Load (0.2ms)[0m  [1m[34mSELECT "equipes".* FROM "equipes"[0m
+Completed 401 Unauthorized in 13ms (ActiveRecord: 0.2ms)
+
+
+  
+NoMethodError (undefined method `equipe_id' for #<Equipe:0x00007fd9b035eb48>):
+  
+app/models/equipe.rb:25:in `block in calc_missoes_pontuacao'
+app/models/equipe.rb:24:in `calc_missoes_pontuacao'
+app/models/equipe.rb:12:in `block in best_equipes'
+app/models/equipe.rb:11:in `best_equipes'
+app/controllers/main_page_controller.rb:4:in `index'
+Started GET "/" for 127.0.0.1 at 2017-12-18 23:54:13 -0200
+Processing by MainPageController#index as HTML
+  [1m[36mEquipe Load (0.2ms)[0m  [1m[34mSELECT "equipes".* FROM "equipes"[0m
+Completed 401 Unauthorized in 21ms (ActiveRecord: 1.6ms)
+
+
+  
+NoMethodError (undefined method `equipe_id' for #<Equipe:0x00007fd9a4207620>):
+  
+app/models/equipe.rb:25:in `block in calc_missoes_pontuacao'
+app/models/equipe.rb:24:in `calc_missoes_pontuacao'
+app/models/equipe.rb:12:in `block in best_equipes'
+app/models/equipe.rb:11:in `best_equipes'
+app/controllers/main_page_controller.rb:4:in `index'
+Started GET "/" for 127.0.0.1 at 2017-12-18 23:54:22 -0200
+Processing by MainPageController#index as HTML
+  [1m[36mEquipe Load (0.2ms)[0m  [1m[34mSELECT "equipes".* FROM "equipes"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "missos" WHERE "missos"."equipe_id" = ? AND "missos"."nv_dific_id" = ?[0m  [["equipe_id", 18], ["nv_dific_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "missos" WHERE "missos"."equipe_id" = ? AND "missos"."nv_dific_id" = ?[0m  [["equipe_id", 18], ["nv_dific_id", 2]]
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "missos" WHERE "missos"."equipe_id" = ? AND "missos"."nv_dific_id" = ?[0m  [["equipe_id", 18], ["nv_dific_id", 3]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "missos" WHERE "missos"."equipe_id" = ? AND "missos"."nv_dific_id" = ?[0m  [["equipe_id", 18], ["nv_dific_id", 4]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "missos" WHERE "missos"."equipe_id" = ? AND "missos"."nv_dific_id" = ?[0m  [["equipe_id", 18], ["nv_dific_id", 5]]
+  Rendering main_page/index.html.erb within layouts/application
+  [1m[36mPessoa Load (0.2ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPessoa Load (0.2ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPessoa Load (0.1ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPessoa Load (0.1ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered main_page/index.html.erb within layouts/application (24.0ms)
+Completed 200 OK in 103ms (Views: 72.8ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/equipes/18" for 127.0.0.1 at 2017-12-18 23:54:25 -0200
+Processing by EquipesController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mEquipe Load (0.4ms)[0m  [1m[34mSELECT  "equipes".* FROM "equipes" WHERE "equipes"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering equipes/show.html.erb within layouts/application
+  [1m[36mPessoa Load (0.2ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPessoa Load (0.2ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPessoa Load (0.2ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPessoa Load (0.2ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered equipes/show.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 66ms (Views: 60.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/main_page/table" for 127.0.0.1 at 2017-12-18 23:54:27 -0200
+Processing by MainPageController#table as HTML
+  Rendering main_page/table.html.erb within layouts/application
+  Rendered main_page/table.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 55ms (Views: 52.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/missos" for 127.0.0.1 at 2017-12-18 23:54:30 -0200
+Processing by MissosController#index as HTML
+  Rendering missos/index.html.erb within layouts/application
+  [1m[36mMisso Load (0.3ms)[0m  [1m[34mSELECT "missos".* FROM "missos"[0m
+  Rendered missos/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 63ms (Views: 50.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/nv_difics" for 127.0.0.1 at 2017-12-18 23:54:32 -0200
+Processing by NvDificsController#index as HTML
+  Rendering nv_difics/index.html.erb within layouts/application
+  [1m[36mNvDific Load (0.2ms)[0m  [1m[34mSELECT "nv_difics".* FROM "nv_difics"[0m
+  Rendered nv_difics/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 57ms (Views: 52.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/nv_difics/new" for 127.0.0.1 at 2017-12-18 23:54:33 -0200
+Processing by NvDificsController#new as HTML
+  Rendering nv_difics/new.html.erb within layouts/application
+  Rendered nv_difics/_form.html.erb (3.2ms)
+  Rendered nv_difics/new.html.erb within layouts/application (18.4ms)
+Completed 200 OK in 82ms (Views: 67.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/nv_difics" for 127.0.0.1 at 2017-12-18 23:54:38 -0200
+Processing by NvDificsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dh9RYPCNexl4zzhi56FOXG+ig1CMVu11MalQtSakd0Xs/vUIoaZxFrcV0/GkO6MQkVbdFqagX6gBNvEEcy3FwA==", "nv_dific"=>{"nivel"=>"bla", "preco"=>"40"}, "commit"=>"Create Nv dific"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO "nv_difics" ("nivel", "preco") VALUES (?, ?)[0m  [["nivel", "bla"], ["preco", 40.0]]
+  [1m[35m (54.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/nv_difics/7
+Completed 302 Found in 62ms (ActiveRecord: 56.4ms)
+
+
+Started GET "/nv_difics/7" for 127.0.0.1 at 2017-12-18 23:54:38 -0200
+Processing by NvDificsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mNvDific Load (0.2ms)[0m  [1m[34mSELECT  "nv_difics".* FROM "nv_difics" WHERE "nv_difics"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering nv_difics/show.html.erb within layouts/application
+  Rendered nv_difics/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 49ms (Views: 45.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/missos" for 127.0.0.1 at 2017-12-18 23:54:43 -0200
+Processing by MissosController#index as HTML
+  Rendering missos/index.html.erb within layouts/application
+  [1m[36mMisso Load (0.3ms)[0m  [1m[34mSELECT "missos".* FROM "missos"[0m
+  Rendered missos/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 83ms (Views: 80.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/missos/new" for 127.0.0.1 at 2017-12-18 23:54:43 -0200
+Processing by MissosController#new as HTML
+  Rendering missos/new.html.erb within layouts/application
+  Rendered missos/_form.html.erb (5.4ms)
+  Rendered missos/new.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 86ms (Views: 63.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/missos" for 127.0.0.1 at 2017-12-18 23:54:55 -0200
+Processing by MissosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fN/9ZSAX8Vu5E9GVimdmWnAtH4sCk+gcKOpq++xzQQwtbEHqkz8YuLHuCDviEhSsHCXblaX7eWIW9IAwxMXTyg==", "misso"=>{"nome"=>"laksdjf", "local"=>"kalsdfj", "nv_dific_id"=>"3", "equipe_id"=>"1", "pessoa_id"=>"1", "preco"=>""}, "commit"=>"Create Misso"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.1ms)[0m  [1m[32mINSERT INTO "missos" ("nome", "local", "nv_dific_id", "equipe_id", "pessoa_id") VALUES (?, ?, ?, ?, ?)[0m  [["nome", "laksdjf"], ["local", "kalsdfj"], ["nv_dific_id", 3], ["equipe_id", 1], ["pessoa_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+Completed 401 Unauthorized in 9ms (ActiveRecord: 2.5ms)
+
+
+  
+ActiveRecord::InvalidForeignKey (SQLite3::ConstraintException: FOREIGN KEY constraint failed: INSERT INTO "missos" ("nome", "local", "nv_dific_id", "equipe_id", "pessoa_id") VALUES (?, ?, ?, ?, ?)):
+  
+app/controllers/missos_controller.rb:30:in `block in create'
+app/controllers/missos_controller.rb:29:in `create'
+Started POST "/missos" for 127.0.0.1 at 2017-12-18 23:55:43 -0200
+Processing by MissosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fN/9ZSAX8Vu5E9GVimdmWnAtH4sCk+gcKOpq++xzQQwtbEHqkz8YuLHuCDviEhSsHCXblaX7eWIW9IAwxMXTyg==", "misso"=>{"nome"=>"laksdjf", "local"=>"kalsdfj", "nv_dific_id"=>"3", "equipe_id"=>"18", "pessoa_id"=>"1", "preco"=>""}, "commit"=>"Create Misso"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "missos" ("nome", "local", "nv_dific_id", "equipe_id", "pessoa_id") VALUES (?, ?, ?, ?, ?)[0m  [["nome", "laksdjf"], ["local", "kalsdfj"], ["nv_dific_id", 3], ["equipe_id", 18], ["pessoa_id", 1]]
+  [1m[35m (116.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/missos/2
+Completed 302 Found in 122ms (ActiveRecord: 116.8ms)
+
+
+Started GET "/missos/2" for 127.0.0.1 at 2017-12-18 23:55:43 -0200
+Processing by MissosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMisso Load (0.3ms)[0m  [1m[34mSELECT  "missos".* FROM "missos" WHERE "missos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering missos/show.html.erb within layouts/application
+  Rendered missos/show.html.erb within layouts/application (2.3ms)
+Completed 401 Unauthorized in 22ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `ID_nv' for #<Misso:0x00007fd9ad45a310>):
+    12: 
+    13: <p>
+    14:   <strong>Id nv:</strong>
+    15:   <%= @misso.ID_nv %>
+    16: </p>
+    17: 
+    18: <p>
+  
+app/views/missos/show.html.erb:15:in `_app_views_missos_show_html_erb__4510408340233530317_70286445756160'
+Started GET "/missos/2" for 127.0.0.1 at 2017-12-18 23:56:35 -0200
+Processing by MissosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMisso Load (0.2ms)[0m  [1m[34mSELECT  "missos".* FROM "missos" WHERE "missos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering missos/show.html.erb within layouts/application
+  Rendered missos/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 64ms (Views: 61.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/missos/" for 127.0.0.1 at 2017-12-18 23:56:38 -0200
+Processing by MissosController#index as HTML
+  Rendering missos/index.html.erb within layouts/application
+  [1m[36mMisso Load (0.3ms)[0m  [1m[34mSELECT "missos".* FROM "missos"[0m
+  Rendered missos/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 63ms (Views: 61.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-18 23:56:42 -0200
+Processing by MainPageController#index as HTML
+  [1m[36mEquipe Load (0.2ms)[0m  [1m[34mSELECT "equipes".* FROM "equipes"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "missos" WHERE "missos"."equipe_id" = ? AND "missos"."nv_dific_id" = ?[0m  [["equipe_id", 18], ["nv_dific_id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "missos" WHERE "missos"."equipe_id" = ? AND "missos"."nv_dific_id" = ?[0m  [["equipe_id", 18], ["nv_dific_id", 2]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "missos" WHERE "missos"."equipe_id" = ? AND "missos"."nv_dific_id" = ?[0m  [["equipe_id", 18], ["nv_dific_id", 3]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "missos" WHERE "missos"."equipe_id" = ? AND "missos"."nv_dific_id" = ?[0m  [["equipe_id", 18], ["nv_dific_id", 4]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "missos" WHERE "missos"."equipe_id" = ? AND "missos"."nv_dific_id" = ?[0m  [["equipe_id", 18], ["nv_dific_id", 5]]
+  Rendering main_page/index.html.erb within layouts/application
+  [1m[36mPessoa Load (0.4ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPessoa Load (0.3ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPessoa Load (0.4ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPessoa Load (0.4ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered main_page/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 84ms (Views: 73.0ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/main_page/table" for 127.0.0.1 at 2017-12-18 23:56:44 -0200
+Processing by MainPageController#table as HTML
+  Rendering main_page/table.html.erb within layouts/application
+  Rendered main_page/table.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 52ms (Views: 50.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/comentarios" for 127.0.0.1 at 2017-12-18 23:56:47 -0200
+Processing by ComentariosController#index as HTML
+  Rendering comentarios/index.html.erb within layouts/application
+  [1m[36mComentario Load (0.2ms)[0m  [1m[34mSELECT "comentarios".* FROM "comentarios"[0m
+  Rendered comentarios/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 73ms (Views: 52.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/comentarios/new" for 127.0.0.1 at 2017-12-18 23:56:49 -0200
+Processing by ComentariosController#new as HTML
+  Rendering comentarios/new.html.erb within layouts/application
+  Rendered comentarios/_form.html.erb (15.9ms)
+  Rendered comentarios/new.html.erb within layouts/application (29.5ms)
+Completed 200 OK in 101ms (Views: 75.7ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/comentarios" for 127.0.0.1 at 2017-12-18 23:56:54 -0200
+Processing by ComentariosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BbBJKqlZntgDaR8B7mCSlUrP4BmzxrHDf6Hg8pRTxIqeZtcBmz9hJGeINtbBHXvWRx80r0wXWMVsT1xSfOHa/w==", "comentario"=>{"cometario"=>"çlasdfkj", "misso_id"=>"1", "pessoa_id"=>"1"}, "commit"=>"Create Comentario"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "comentarios" ("cometario", "misso_id", "pessoa_id") VALUES (?, ?, ?)[0m  [["cometario", "çlasdfkj"], ["misso_id", 1], ["pessoa_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 401 Unauthorized in 6ms (ActiveRecord: 1.2ms)
+
+
+  
+ActiveRecord::InvalidForeignKey (SQLite3::ConstraintException: FOREIGN KEY constraint failed: INSERT INTO "comentarios" ("cometario", "misso_id", "pessoa_id") VALUES (?, ?, ?)):
+  
+app/controllers/comentarios_controller.rb:30:in `block in create'
+app/controllers/comentarios_controller.rb:29:in `create'
+Started POST "/comentarios" for 127.0.0.1 at 2017-12-18 23:57:03 -0200
+Processing by ComentariosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BbBJKqlZntgDaR8B7mCSlUrP4BmzxrHDf6Hg8pRTxIqeZtcBmz9hJGeINtbBHXvWRx80r0wXWMVsT1xSfOHa/w==", "comentario"=>{"cometario"=>"çlasdfkj", "misso_id"=>"2", "pessoa_id"=>"1"}, "commit"=>"Create Comentario"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "comentarios" ("cometario", "misso_id", "pessoa_id") VALUES (?, ?, ?)[0m  [["cometario", "çlasdfkj"], ["misso_id", 2], ["pessoa_id", 1]]
+  [1m[35m (71.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/comentarios/2
+Completed 302 Found in 79ms (ActiveRecord: 73.1ms)
+
+
+Started GET "/comentarios/2" for 127.0.0.1 at 2017-12-18 23:57:03 -0200
+Processing by ComentariosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mComentario Load (0.4ms)[0m  [1m[34mSELECT  "comentarios".* FROM "comentarios" WHERE "comentarios"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering comentarios/show.html.erb within layouts/application
+  Rendered comentarios/show.html.erb within layouts/application (2.4ms)
+Completed 401 Unauthorized in 22ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `ID_missao' for #<Comentario:0x00007fd9ad441950>):
+     7: 
+     8: <p>
+     9:   <strong>Id missao:</strong>
+    10:   <%= @comentario.ID_missao %>
+    11: </p>
+    12: 
+    13: <p>
+  
+app/views/comentarios/show.html.erb:10:in `_app_views_comentarios_show_html_erb__1050935988093425461_70286445701140'
+Started GET "/comentarios/2" for 127.0.0.1 at 2017-12-18 23:57:34 -0200
+Processing by ComentariosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mComentario Load (0.2ms)[0m  [1m[34mSELECT  "comentarios".* FROM "comentarios" WHERE "comentarios"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering comentarios/show.html.erb within layouts/application
+  Rendered comentarios/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 58ms (Views: 55.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/comentarios" for 127.0.0.1 at 2017-12-18 23:57:37 -0200
+Processing by ComentariosController#index as HTML
+  Rendering comentarios/index.html.erb within layouts/application
+  [1m[36mComentario Load (0.4ms)[0m  [1m[34mSELECT "comentarios".* FROM "comentarios"[0m
+  Rendered comentarios/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 61ms (Views: 58.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-18 23:57:41 -0200
+Processing by MainPageController#index as HTML
+  [1m[36mEquipe Load (0.4ms)[0m  [1m[34mSELECT "equipes".* FROM "equipes"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "missos" WHERE "missos"."equipe_id" = ? AND "missos"."nv_dific_id" = ?[0m  [["equipe_id", 18], ["nv_dific_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "missos" WHERE "missos"."equipe_id" = ? AND "missos"."nv_dific_id" = ?[0m  [["equipe_id", 18], ["nv_dific_id", 2]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "missos" WHERE "missos"."equipe_id" = ? AND "missos"."nv_dific_id" = ?[0m  [["equipe_id", 18], ["nv_dific_id", 3]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "missos" WHERE "missos"."equipe_id" = ? AND "missos"."nv_dific_id" = ?[0m  [["equipe_id", 18], ["nv_dific_id", 4]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "missos" WHERE "missos"."equipe_id" = ? AND "missos"."nv_dific_id" = ?[0m  [["equipe_id", 18], ["nv_dific_id", 5]]
+  Rendering main_page/index.html.erb within layouts/application
+  [1m[36mPessoa Load (0.4ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPessoa Load (0.4ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPessoa Load (0.4ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPessoa Load (0.4ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered main_page/index.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 78ms (Views: 67.2ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/main_page/table" for 127.0.0.1 at 2017-12-18 23:57:44 -0200
+Processing by MainPageController#table as HTML
+  Rendering main_page/table.html.erb within layouts/application
+  Rendered main_page/table.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 57ms (Views: 55.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/avaliacos" for 127.0.0.1 at 2017-12-18 23:57:54 -0200
+Processing by AvaliacosController#index as HTML
+  Rendering avaliacos/index.html.erb within layouts/application
+  [1m[36mAvaliaco Load (0.2ms)[0m  [1m[34mSELECT "avaliacos".* FROM "avaliacos"[0m
+  Rendered avaliacos/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 76ms (Views: 53.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/avaliacos/new" for 127.0.0.1 at 2017-12-18 23:57:55 -0200
+Processing by AvaliacosController#new as HTML
+  Rendering avaliacos/new.html.erb within layouts/application
+  Rendered avaliacos/_form.html.erb (4.0ms)
+  Rendered avaliacos/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 71ms (Views: 52.0ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/avaliacos" for 127.0.0.1 at 2017-12-18 23:58:00 -0200
+Processing by AvaliacosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UfYDloMyS9dy8h9vXNHWTlhISEB0e23/mBbsoABtXAH9RcsXFhDOOl8OFUuXfhs9Ew9O79u5iWM/8OhoinEnow==", "avaliaco"=>{"avaliacao"=>"10", "avaliado_id"=>"1", "avaliador_id"=>"2"}, "commit"=>"Create Avaliaco"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "avaliacos" ("avaliacao", "avaliado_id", "avaliador_id") VALUES (?, ?, ?)[0m  [["avaliacao", 10.0], ["avaliado_id", 1], ["avaliador_id", 2]]
+  [1m[35m (85.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/avaliacos/35
+Completed 302 Found in 93ms (ActiveRecord: 86.4ms)
+
+
+Started GET "/avaliacos/35" for 127.0.0.1 at 2017-12-18 23:58:00 -0200
+Processing by AvaliacosController#show as HTML
+  Parameters: {"id"=>"35"}
+  [1m[36mAvaliaco Load (0.2ms)[0m  [1m[34mSELECT  "avaliacos".* FROM "avaliacos" WHERE "avaliacos"."id" = ? LIMIT ?[0m  [["id", 35], ["LIMIT", 1]]
+  Rendering avaliacos/show.html.erb within layouts/application
+  Rendered avaliacos/show.html.erb within layouts/application (2.2ms)
+Completed 401 Unauthorized in 32ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `ID_avaliado' for #<Avaliaco:0x00007fd9acdc77a0>):
+     7: 
+     8: <p>
+     9:   <strong>Id avaliado:</strong>
+    10:   <%= @avaliaco.ID_avaliado %>
+    11: </p>
+    12: 
+    13: <p>
+  
+app/views/avaliacos/show.html.erb:10:in `_app_views_avaliacos_show_html_erb__1644800772714929967_70286442362940'
+Started GET "/avaliacos/35" for 127.0.0.1 at 2017-12-18 23:58:31 -0200
+Processing by AvaliacosController#show as HTML
+  Parameters: {"id"=>"35"}
+  [1m[36mAvaliaco Load (0.2ms)[0m  [1m[34mSELECT  "avaliacos".* FROM "avaliacos" WHERE "avaliacos"."id" = ? LIMIT ?[0m  [["id", 35], ["LIMIT", 1]]
+  Rendering avaliacos/show.html.erb within layouts/application
+  Rendered avaliacos/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 57ms (Views: 54.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/avaliacos" for 127.0.0.1 at 2017-12-18 23:58:38 -0200
+Processing by AvaliacosController#index as HTML
+  Rendering avaliacos/index.html.erb within layouts/application
+  [1m[36mAvaliaco Load (0.2ms)[0m  [1m[34mSELECT "avaliacos".* FROM "avaliacos"[0m
+  Rendered avaliacos/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 68ms (Views: 66.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-18 23:58:41 -0200
+Processing by MainPageController#index as HTML
+  [1m[36mEquipe Load (0.3ms)[0m  [1m[34mSELECT "equipes".* FROM "equipes"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "missos" WHERE "missos"."equipe_id" = ? AND "missos"."nv_dific_id" = ?[0m  [["equipe_id", 18], ["nv_dific_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "missos" WHERE "missos"."equipe_id" = ? AND "missos"."nv_dific_id" = ?[0m  [["equipe_id", 18], ["nv_dific_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "missos" WHERE "missos"."equipe_id" = ? AND "missos"."nv_dific_id" = ?[0m  [["equipe_id", 18], ["nv_dific_id", 3]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "missos" WHERE "missos"."equipe_id" = ? AND "missos"."nv_dific_id" = ?[0m  [["equipe_id", 18], ["nv_dific_id", 4]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "missos" WHERE "missos"."equipe_id" = ? AND "missos"."nv_dific_id" = ?[0m  [["equipe_id", 18], ["nv_dific_id", 5]]
+  Rendering main_page/index.html.erb within layouts/application
+  [1m[36mPessoa Load (0.3ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPessoa Load (0.2ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPessoa Load (0.2ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPessoa Load (0.3ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered main_page/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 70ms (Views: 58.3ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/pessoas/1" for 127.0.0.1 at 2017-12-18 23:58:44 -0200
+Processing by PessoasController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPessoa Load (0.4ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pessoas/show.html.erb within layouts/application
+  [1m[36mRkNinja Load (0.3ms)[0m  [1m[34mSELECT  "rk_ninjas".* FROM "rk_ninjas" WHERE "rk_ninjas"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTpUser Load (0.3ms)[0m  [1m[34mSELECT  "tp_users".* FROM "tp_users" WHERE "tp_users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered pessoas/show.html.erb within layouts/application (24.3ms)
+Completed 200 OK in 89ms (Views: 82.8ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-18 23:58:46 -0200
+Processing by MainPageController#index as HTML
+  [1m[36mEquipe Load (0.3ms)[0m  [1m[34mSELECT "equipes".* FROM "equipes"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "missos" WHERE "missos"."equipe_id" = ? AND "missos"."nv_dific_id" = ?[0m  [["equipe_id", 18], ["nv_dific_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "missos" WHERE "missos"."equipe_id" = ? AND "missos"."nv_dific_id" = ?[0m  [["equipe_id", 18], ["nv_dific_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "missos" WHERE "missos"."equipe_id" = ? AND "missos"."nv_dific_id" = ?[0m  [["equipe_id", 18], ["nv_dific_id", 3]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "missos" WHERE "missos"."equipe_id" = ? AND "missos"."nv_dific_id" = ?[0m  [["equipe_id", 18], ["nv_dific_id", 4]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "missos" WHERE "missos"."equipe_id" = ? AND "missos"."nv_dific_id" = ?[0m  [["equipe_id", 18], ["nv_dific_id", 5]]
+  Rendering main_page/index.html.erb within layouts/application
+  [1m[36mPessoa Load (0.3ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPessoa Load (0.2ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPessoa Load (0.2ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPessoa Load (0.2ms)[0m  [1m[34mSELECT  "pessoas".* FROM "pessoas" WHERE "pessoas"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered main_page/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 67ms (Views: 56.9ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/main_page/table" for 127.0.0.1 at 2017-12-18 23:58:47 -0200
+Processing by MainPageController#table as HTML
+  Rendering main_page/table.html.erb within layouts/application
+  Rendered main_page/table.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 73ms (Views: 72.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tp_users" for 127.0.0.1 at 2017-12-18 23:58:51 -0200
+Processing by TpUsersController#index as HTML
+  Rendering tp_users/index.html.erb within layouts/application
+  [1m[36mTpUser Load (0.2ms)[0m  [1m[34mSELECT "tp_users".* FROM "tp_users"[0m
+  Rendered tp_users/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 55ms (Views: 53.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/tp_users/new" for 127.0.0.1 at 2017-12-18 23:58:52 -0200
+Processing by TpUsersController#new as HTML
+  Rendering tp_users/new.html.erb within layouts/application
+  Rendered tp_users/_form.html.erb (4.3ms)
+  Rendered tp_users/new.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 75ms (Views: 65.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/tp_users" for 127.0.0.1 at 2017-12-18 23:58:54 -0200
+Processing by TpUsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pEgurc7fblz6Z4ZZOq2qCGbOfcy5OLnixJKcVWkhmpmvpdFW6DBm50SPRAzHeCoSma13IoYje/T9C8UBuKSwiw==", "tp_user"=>{"tipo"=>"teste"}, "commit"=>"Create Tp user"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "tp_users" ("tipo") VALUES (?)[0m  [["tipo", "teste"]]
+  [1m[35m (110.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/tp_users/5
+Completed 302 Found in 116ms (ActiveRecord: 110.9ms)
+
+
+Started GET "/tp_users/5" for 127.0.0.1 at 2017-12-18 23:58:54 -0200
+Processing by TpUsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mTpUser Load (0.2ms)[0m  [1m[34mSELECT  "tp_users".* FROM "tp_users" WHERE "tp_users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering tp_users/show.html.erb within layouts/application
+  Rendered tp_users/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 57ms (Views: 54.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/rk_ninjas" for 127.0.0.1 at 2017-12-18 23:58:59 -0200
+Processing by RkNinjasController#index as HTML
+  Rendering rk_ninjas/index.html.erb within layouts/application
+  [1m[36mRkNinja Load (0.3ms)[0m  [1m[34mSELECT "rk_ninjas".* FROM "rk_ninjas"[0m
+  Rendered rk_ninjas/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 62ms (Views: 59.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tp_users" for 127.0.0.1 at 2017-12-18 23:59:03 -0200
+Processing by TpUsersController#index as HTML
+  Rendering tp_users/index.html.erb within layouts/application
+  [1m[36mTpUser Load (0.3ms)[0m  [1m[34mSELECT "tp_users".* FROM "tp_users"[0m
+  Rendered tp_users/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 58ms (Views: 56.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/rk_ninjas" for 127.0.0.1 at 2017-12-18 23:59:05 -0200
+Processing by RkNinjasController#index as HTML
+  Rendering rk_ninjas/index.html.erb within layouts/application
+  [1m[36mRkNinja Load (0.3ms)[0m  [1m[34mSELECT "rk_ninjas".* FROM "rk_ninjas"[0m
+  Rendered rk_ninjas/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 65ms (Views: 62.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/rk_ninjas/new" for 127.0.0.1 at 2017-12-18 23:59:06 -0200
+Processing by RkNinjasController#new as HTML
+  Rendering rk_ninjas/new.html.erb within layouts/application
+  Rendered rk_ninjas/_form.html.erb (2.7ms)
+  Rendered rk_ninjas/new.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 66ms (Views: 51.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/rk_ninjas" for 127.0.0.1 at 2017-12-18 23:59:10 -0200
+Processing by RkNinjasController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iAiGdeZ7MWWOEb0AiFzg9EN6HdR20QHLt1V67y0sU/BCHwyFJ1HalXkD7yS+ksQsvnC/Ifbnmdp+37tQsChJuQ==", "rk_ninja"=>{"rank"=>"teste"}, "commit"=>"Create Rk ninja"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "rk_ninjas" ("rank") VALUES (?)[0m  [["rank", "teste"]]
+  [1m[35m (72.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/rk_ninjas/9
+Completed 302 Found in 80ms (ActiveRecord: 73.9ms)
+
+
+Started GET "/rk_ninjas/9" for 127.0.0.1 at 2017-12-18 23:59:10 -0200
+Processing by RkNinjasController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mRkNinja Load (0.2ms)[0m  [1m[34mSELECT  "rk_ninjas".* FROM "rk_ninjas" WHERE "rk_ninjas"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering rk_ninjas/show.html.erb within layouts/application
+  Rendered rk_ninjas/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 57ms (Views: 46.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/rk_ninjas" for 127.0.0.1 at 2017-12-18 23:59:15 -0200
+Processing by RkNinjasController#index as HTML
+  Rendering rk_ninjas/index.html.erb within layouts/application
+  [1m[36mRkNinja Load (0.4ms)[0m  [1m[34mSELECT "rk_ninjas".* FROM "rk_ninjas"[0m
+  Rendered rk_ninjas/index.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 100ms (Views: 97.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-19 00:02:05 -0200
+Processing by MainPageController#index as HTML
+  [1m[36mEquipe Load (0.3ms)[0m  [1m[34mSELECT "equipes".* FROM "equipes"[0m
+  Rendering main_page/index.html.erb within layouts/application
+  Rendered main_page/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 60ms (Views: 56.8ms | ActiveRecord: 0.3ms)
+
+
