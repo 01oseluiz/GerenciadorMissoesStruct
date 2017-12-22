@@ -4,28 +4,22 @@
 
 <table>
   <thead>
-    <tr>
-      <th>Cometario</th>
-      <th>Id missao</th>
-      <th>Id pessoa</th>
-      <th colspan="3"></th>
-    </tr>
+  <tr>
+    <th>Cometario</th>
+    <th>Missão</th>
+    <th>Comentado por</th>
+    <th colspan="3"></th>
+  </tr>
   </thead>
 
   <tbody>
-    <% @comentarios.each do |comentario| %>
+  <% @comentarios.each do |comentario| %>
       <tr>
         <td><%= comentario.cometario %></td>
-        <td><%= comentario.misso_id %></td>
-        <td><%= comentario.pessoa_id %></td>
+        <td><%= link_to Misso.find(comentario.misso_id).nome, misso_path(comentario.misso_id) %></td>
+        <td><%= link_to Pessoa.find(comentario.pessoa_id).nome, pessoa_path(comentario.pessoa_id) %></td>
         <td><%= link_to 'Show', comentario %></td>
-        <td><%= link_to 'Edit', edit_comentario_path(comentario) %></td>
-        <td><%= link_to 'Destroy', comentario, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-    <% end %>
+  <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Comentario', new_comentario_path %>

@@ -1,0 +1,27 @@
+<% @equipes = Equipe.all %>
+
+<br/><h1>Equipes</h1>
+<% #TODO- buscar por todas as equipes pelo rank do membro superior ou pelo nome ou numero da equipe %>
+
+<table>
+  <tr>
+    <th>Equipe |</th>
+    <th>Membro 1 |</th>
+    <th>Membro 2 |</th>
+    <th>Membro 3 |</th>
+    <th>Membro S |</th>
+    <th>Media da equipe</th>
+  </tr>
+
+  <% @equipes.each do |equipe| %>
+      <tr>
+        <td><%= equipe.nomeEq %></td>
+        <td><%= equipe.membro_1 %></td>
+        <td><%= equipe.membro_2 %></td>
+        <td><%= equipe.membro_3 %></td>
+        <td><%= equipe.membro_s %></td>
+        <td><%= equipe.mediaEq %></td>
+        <td><%= link_to 'ver', equipe_path(equipe) %></td>
+      </tr>
+  <% end %>
+</table>

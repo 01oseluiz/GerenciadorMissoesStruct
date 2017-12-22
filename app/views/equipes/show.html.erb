@@ -6,29 +6,29 @@
 </p>
 
 <p>
-  <strong>Mediaeq:</strong>
+  <strong>Media da equipe:</strong>
   <%= @equipe.mediaEq %>
 </p>
 
 <p>
   <strong>Mb 1:</strong>
-  <%= link_to @equipe.get_membro(@equipe.mb_1_id), pessoa_path(@equipe.mb_1_id) %>
+  <%= link_to @equipe.membro_1, pessoa_path(@equipe.mb_1_id) %>
 </p>
 
 <p>
   <strong>Mb 2:</strong>
-  <%= link_to @equipe.get_membro(@equipe.mb_2_id), pessoa_path(@equipe.mb_2_id) %>
+  <%= link_to @equipe.membro_2, pessoa_path(@equipe.mb_2_id) %>
 </p>
 
 <p>
   <strong>Mb 3:</strong>
-  <%= link_to @equipe.get_membro(@equipe.mb_3_id), pessoa_path(@equipe.mb_3_id) %>
+  <%= link_to @equipe.membro_3, pessoa_path(@equipe.mb_3_id) %>
 </p>
 
 <p>
   <strong>Mb s:</strong>
-  <%= link_to @equipe.get_membro(@equipe.mb_S_id), pessoa_path(@equipe.mb_S_id) %>
+  <%= link_to @equipe.membro_s, pessoa_path(@equipe.mb_S_id) %>
 </p>
 
-<%= link_to 'Edit', edit_equipe_path(@equipe) %> |
-<%= link_to 'Back', :back %>
+<%= link_to 'Editar', edit_equipe_path(@equipe) %> |
+<%= link_to 'Voltar', :back %>

@@ -6,7 +6,7 @@
   <thead>
     <tr>
       <th>Nomeeq</th>
-      <th>Mediaeq</th>
+      <th>Media da equipe</th>
       <th>Mb 1</th>
       <th>Mb 2</th>
       <th>Mb 3</th>
@@ -20,13 +20,11 @@
       <tr>
         <td><%= link_to equipe.nomeEq, equipe_path(equipe) %></td>
         <td><%= equipe.mediaEq %></td>
-        <td><%= link_to equipe.get_membro(equipe.mb_1_id), pessoa_path(equipe.mb_1_id) %></td>
-        <td><%= link_to equipe.get_membro(equipe.mb_2_id), pessoa_path(equipe.mb_2_id) %></td>
-        <td><%= link_to equipe.get_membro(equipe.mb_3_id), pessoa_path(equipe.mb_3_id) %></td>
-        <td><%= link_to equipe.get_membro(equipe.mb_S_id), pessoa_path(equipe.mb_S_id) %></td>
+        <td><%= link_to equipe.membro_1, pessoa_path(equipe.mb_1_id) %></td>
+        <td><%= link_to equipe.membro_2, pessoa_path(equipe.mb_2_id) %></td>
+        <td><%= link_to equipe.membro_3, pessoa_path(equipe.mb_3_id) %></td>
+        <td><%= link_to equipe.membro_s, pessoa_path(equipe.mb_S_id) %></td>
         <td><%= link_to 'Show', equipe %></td>
-        <td><%= link_to 'Edit', edit_equipe_path(equipe) %></td>
-        <td><%= link_to 'Destroy', equipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

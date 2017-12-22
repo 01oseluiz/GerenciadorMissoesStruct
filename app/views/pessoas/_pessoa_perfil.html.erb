@@ -1,0 +1,44 @@
+<h1>Perfil: <%= @pessoa.nome %></h1>
+
+<h2>Dados:</h2>
+<p>
+  <strong>E-mail:</strong>
+  <%= @pessoa.email %>
+</p>
+
+<p>
+  <strong>Telefone:</strong>
+  <%= @pessoa.telefone %>
+</p>
+
+<p>
+  <strong>Data de nascimento:</strong>
+  <%= @pessoa.dataNasc %>
+</p>
+
+<p>
+  <strong>Endereço:</strong>
+  <%= @pessoa.endereco %>
+</p>
+
+<p>
+  <strong>Rank ninja:</strong>
+  <%= @pessoa.rank %>
+</p>
+
+<p>
+  <strong>Tipo de conta:</strong>
+  <%= @pessoa.tipo %>
+</p>
+
+<p>
+  <strong>Media de Avaliações:</strong>
+  <%= @pessoa.mediaAv %>
+</p>
+
+<% if current_pessoa.tipo == "admin" %>
+    <%= link_to 'Editar', edit_pessoa_registration_path(@pessoa)%> |
+<% end %>
+
+<%= link_to 'Avaliar Usuario', new_pessoa_avaliaco_path(@pessoa)%> |
+<%= link_to 'Voltar', :back %>

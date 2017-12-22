@@ -25,13 +25,7 @@
         <td><%= misso.pessoa_id %></td>
         <td><%= misso.preco %></td>
         <td><%= link_to 'Show', misso %></td>
-        <td><%= link_to 'Edit', edit_misso_path(misso) %></td>
-        <td><%= link_to 'Destroy', misso, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Misso', new_misso_path %>

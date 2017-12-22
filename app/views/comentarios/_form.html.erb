@@ -1,4 +1,4 @@
-<%= form_with(model: comentario, local: true) do |form| %>
+<%= form_with(model: [@misso, @comentario], local: true) do |form| %>
   <% if comentario.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(comentario.errors.count, "error") %> prohibited this comentario from being saved:</h2>
@@ -14,16 +14,6 @@
   <div class="field">
     <%= form.label :cometario %>
     <%= form.text_area :cometario, id: :comentario_cometario %>
-  </div>
-
-  <div class="field">
-    <%= form.label :misso_id %>
-    <%= form.number_field :misso_id, id: :comentario_ID_missao %>
-  </div>
-
-  <div class="field">
-    <%= form.label :pessoa_id %>
-    <%= form.number_field :pessoa_id, id: :comentario_ID_pessoa %>
   </div>
 
   <div class="actions">

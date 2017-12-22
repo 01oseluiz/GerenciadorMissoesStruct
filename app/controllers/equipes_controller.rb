@@ -78,7 +78,7 @@ class EquipesController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def equipe_params
-    params.require(:equipe).permit(:nomeEq, :mediaEq, :mb_1_id, :mb_2_id, :mb_3_id, :mb_S_id)
+    params.require(:equipe).permit(:nomeEq, :mb_1_id, :mb_2_id, :mb_3_id, :mb_S_id)
   end
 
   # Valida a equipe quanto a sua composicao

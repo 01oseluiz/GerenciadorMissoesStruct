@@ -1,0 +1,21 @@
+<h1>Bem Vindo <%= @pessoa.nome %></h1>
+
+<% if @pessoa.tipo.downcase == "admin" %>
+    <h2>admin</h2>
+    <h5><%= link_to 'Criar missão', new_misso_path %></h5>
+    <h5><%= link_to 'Montar uma equipe', new_equipe_path %></h5>
+<% elsif @pessoa.tipo.downcase == "solicitante" %>
+    <h2>solicitante</h2>
+    <h5><%= link_to 'criar missão', new_misso_path %></h5>
+    <h5>criar uma missao, enviar e-mail para raikage informando a criação da missao</h5>
+<% else %>
+    <h2>ninja</h2>
+<% end %>
+
+<%= render 'equipes/equipes'%>
+
+<%= render 'missos/missoes'%>
+
+<% #todo- edição de pessoa não funcional %>
+<br/><%= link_to 'Editar minha conta', edit_pessoa_registration_path(@pessoa)%> |
+<%= link_to 'Voltar', :back %>

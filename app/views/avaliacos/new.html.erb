@@ -1,5 +1,13 @@
-<h1>New Avaliaco</h1>
+<h1>Avaliar <%= @pessoa.nome%></h1>
 
-<%= render 'form', avaliaco: @avaliaco %>
+<% if Avaliaco.where(pessoa_id: @pessoa.id, avaliador_id: current_pessoa.id).empty? %>
+    <% if @pessoa != current_pessoa %>
+        <%= render 'form' %>
 
-<%= link_to 'Back', :back %>
+        <%= link_to 'Voltar', :back %>
+    <% else %>
+        <h3>Você não pode se auto-avaliar</h3>
+    <% end %>
+<% else %>
+    <h3>Você já avaliou esta pessoa.</h3>
+<% end %>

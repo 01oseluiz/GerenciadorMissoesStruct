@@ -14,7 +14,8 @@ class ComentariosController < ApplicationController
 
   # GET /comentarios/new
   def new
-    @comentario = Comentario.new
+    @misso = Misso.find(params[:misso_id])
+    @comentario = @misso.comentarios.build
   end
 
   # GET /comentarios/1/edit
@@ -24,11 +25,12 @@ class ComentariosController < ApplicationController
   # POST /comentarios
   # POST /comentarios.json
   def create
-    @comentario = Comentario.new(comentario_params)
+    @misso = Misso.find(params[:misso_id])
+    @comentario = @misso.comentarios.build(comentario_params)
 
     respond_to do |format|
       if @comentario.save
-        format.html { redirect_to @comentario, notice: 'Comentario was successfully created.' }
+        format.html { redirect_to @misso, notice: 'Comentario was successfully created.' }
         format.json { render :show, status: :created, location: @comentario }
       else
         format.html { render :new }
@@ -69,6 +71,8 @@ class ComentariosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def comentario_params
-      params.require(:comentario).permit(:cometario, :misso_id, :pessoa_id)
+      hash = params.require(:comentario).permit(:cometario, :misso_id, :pessoa_id)
+      hash[:pessoa_id] = current_pessoa.id
+      hash
     end
 end

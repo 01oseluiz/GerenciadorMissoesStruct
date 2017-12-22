@@ -4,24 +4,23 @@
 
 <table>
   <thead>
-    <tr>
-      <th>Nome</th>
-      <th>Identidade</th>
-      <th>Telefone</th>
-      <th>Datanasc</th>
-      <th>Endereco</th>
-      <th>User name</th>
-      <th>Email</th>
-      <th>Senha</th>
-      <th>Rank</th>
-      <th>Tipo de conta</th>
-      <th>Avaliações</th>
-      <th colspan="3"></th>
-    </tr>
+  <tr>
+    <th>Nome</th>
+    <th>Identidade</th>
+    <th>Telefone</th>
+    <th>Datanasc</th>
+    <th>Endereco</th>
+    <th>User name</th>
+    <th>Email</th>
+    <th>Rank</th>
+    <th>Tipo de conta</th>
+    <th>Avaliações</th>
+    <th colspan="3"></th>
+  </tr>
   </thead>
 
   <tbody>
-    <% @pessoas.each do |pessoa| %>
+  <% @pessoas.each do |pessoa| %>
       <tr>
         <td><%= pessoa.nome %></td>
         <td><%= pessoa.identidade %></td>
@@ -30,18 +29,11 @@
         <td><%= pessoa.endereco %></td>
         <td><%= pessoa.user_name %></td>
         <td><%= pessoa.email %></td>
-        <td><%= pessoa.senha %></td>
         <td><%= pessoa.rank %></td>
         <td><%= pessoa.tipo %></td>
         <td><%= pessoa.mediaAv %></td>
         <td><%= link_to 'Show', pessoa %></td>
-        <td><%= link_to 'Edit', edit_pessoa_path(pessoa) %></td>
-        <td><%= link_to 'Destroy', pessoa, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-    <% end %>
+  <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Pessoa', new_pessoa_path %>

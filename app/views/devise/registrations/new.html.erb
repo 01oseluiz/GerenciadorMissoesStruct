@@ -1,0 +1,67 @@
+<h2>Sign up</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
+
+    <!-------------- DADOS PESSOAIS---------------->
+    <div class="field">
+      <%= f.label :nome %>
+      <%= f.text_field :nome %>
+    </div><br/>
+
+    <div class="field">
+      <%= f.label :identidade %>
+      <%= f.text_field :identidade %>
+    </div><br/>
+
+    <div class="field">
+      <%= f.label :telefone %>
+      <%= f.telephone_field :telefone, placeholder: '(99) 99999-9999'%>
+    </div><br/>
+
+    <div class="field">
+      <%= f.label :Data_de_Nascimento %>
+      <%= f.date_select :dataNasc %>
+    </div><br/>
+
+    <div class="field">
+      <%= f.label :endereco %>
+      <%= f.text_field :endereco %>
+    </div><br/>
+
+    <div class="field">
+      <%= f.label :Rank %>
+      <%= f.select(:rk_ninja_id, RkNinja.new.get_rank_options)%>
+    </div><br/>
+
+    <!-------------- DADOS DE CONTA---------------->
+
+    <div class="field">
+      <%= f.label :Usuario %><br/>
+      <%= f.text_field :user_name %>
+    </div>
+
+    <div class="field">
+      <%= f.label :email %><br/>
+      <%= f.email_field :email %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password %>
+      <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br/>
+      <%= f.password_field :password, autocomplete: "off" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password_confirmation %><br/>
+      <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Sign up" %>
+    </div>
+<% end %>
+
+<%= render "devise/shared/links" %>

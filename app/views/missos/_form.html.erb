@@ -1,47 +1,49 @@
 <%= form_with(model: misso, local: true) do |form| %>
-  <% if misso.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(misso.errors.count, "error") %> prohibited this misso from being saved:</h2>
+    <% if misso.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(misso.errors.count, "error") %> prohibited this misso from being saved:</h2>
 
-      <ul>
-      <% misso.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+          <ul>
+            <% misso.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+      <%= form.label :nome %>
+      <%= form.text_field :nome, id: :misso_nome %>
     </div>
-  <% end %>
 
-  <div class="field">
-    <%= form.label :nome %>
-    <%= form.text_field :nome, id: :misso_nome %>
-  </div>
+    <div class="field">
+      <%= form.label :local %>
+      <%= form.text_field :local, id: :misso_local %>
+    </div>
 
-  <div class="field">
-    <%= form.label :local %>
-    <%= form.text_field :local, id: :misso_local %>
-  </div>
+    <div class="field">
+      <%= form.label :nv_dific_id %>
+      <%= form.number_field :nv_dific_id, id: :misso_ID_nv %>
+    </div>
 
-  <div class="field">
-    <%= form.label :nv_dific_id %>
-    <%= form.number_field :nv_dific_id, id: :misso_ID_nv %>
-  </div>
+    <% if current_pessoa.tipo.downcase == "admin" %>
+        <div class="field">
+          <%= form.label :equipe_id %>
+          <%= form.number_field :equipe_id, id: :misso_ID_equipe %>
+        </div>
+    <% end %>
 
-  <div class="field">
-    <%= form.label :equipe_id %>
-    <%= form.number_field :equipe_id, id: :misso_ID_equipe %>
-  </div>
+    <div class="field">
+      <%= form.label :pessoa_id %>
+      <%= form.number_field :pessoa_id, id: :misso_ID_pessoa %>
+    </div>
 
-  <div class="field">
-    <%= form.label :pessoa_id %>
-    <%= form.number_field :pessoa_id, id: :misso_ID_pessoa %>
-  </div>
+    <div class="field">
+      <%= form.label :preco %>
+      <%= form.text_field :preco, id: :misso_preco %>
+    </div>
 
-  <div class="field">
-    <%= form.label :preco %>
-    <%= form.text_field :preco, id: :misso_preco %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+    <div class="actions">
+      <%= form.submit %>
+    </div>
 <% end %>

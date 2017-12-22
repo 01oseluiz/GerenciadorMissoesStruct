@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171219012011) do
+ActiveRecord::Schema.define(version: 20171219020309) do
 
   create_table "avaliacos", force: :cascade do |t|
     t.float "avaliacao", null: false
@@ -50,18 +50,29 @@ ActiveRecord::Schema.define(version: 20171219012011) do
   end
 
   create_table "pessoas", force: :cascade do |t|
-    t.string "nome", limit: 50
-    t.integer "identidade"
+    t.string "nome", limit: 50, null: false
+    t.integer "identidade", null: false
     t.integer "telefone"
     t.date "dataNasc"
     t.string "endereco", limit: 80
-    t.string "user_name", limit: 30
-    t.integer "rk_ninja_id"
+    t.integer "rk_ninja_id", null: false
     t.integer "tp_user_id"
+    t.string "user_name", limit: 30, null: false
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
     t.float "mediaAv", default: 0.0
-    t.string "email"
-    t.string "senha"
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
+    t.index ["email"], name: "index_pessoas_on_email", unique: true
     t.index ["identidade"], name: "sqlite_autoindex_pessoas_1", unique: true
+    t.index ["nome"], name: "index_pessoas_on_nome", unique: true
+    t.index ["reset_password_token"], name: "index_pessoas_on_reset_password_token", unique: true
     t.index ["user_name"], name: "sqlite_autoindex_pessoas_2", unique: true
   end
 

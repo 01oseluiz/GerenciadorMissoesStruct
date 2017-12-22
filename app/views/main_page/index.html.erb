@@ -1,18 +1,26 @@
 <h1>Bem Vindo a Villa da Nuvem!</h1>
 
+<% if pessoa_signed_in? %>
+    <h5><%= link_to 'Meu Feed', pessoa_path(current_pessoa) %></h5>
+    <h5><%= link_to 'Logoff', destroy_pessoa_session_path, method: :delete %></h5>
+<% else %>
+    <h5><%= link_to 'Criar Conta', new_pessoa_registration_path %></h5>
+    <h5><%= link_to 'Login', new_pessoa_session_path %></h5>
+<% end %>
+
 <table>
   <tr>
     <td>
       <h2>Rank: Melhores Equipes</h2>
       <table>
         <tr>
-          <td>Posição</td>
-          <td>Equipe</td>
-          <td>Membro 1</td>
-          <td>Membro 2</td>
-          <td>Membro 3</td>
-          <td>Membro S</td>
-          <td>Pontuação</td>
+          <th>Posição |</th>
+          <th>Equipe |</th>
+          <th>Membro 1 |</th>
+          <th>Membro 2 |</th>
+          <th>Membro 3 |</th>
+          <th>Membro S |</th>
+          <th>Pontuação</th>
         </tr>
         <% count=0 %>
         <% @equipes.each do |equipe, pontuacao| %>
@@ -20,10 +28,10 @@
             <tr>
               <td><%= count %></td>
               <td><%= link_to equipe.nomeEq, equipe_path(equipe) %></td>
-              <td><%= link_to equipe.get_membro(equipe.mb_1_id), pessoa_path(equipe.mb_1_id) %></td>
-              <td><%= link_to equipe.get_membro(equipe.mb_2_id), pessoa_path(equipe.mb_2_id) %></td>
-              <td><%= link_to equipe.get_membro(equipe.mb_3_id), pessoa_path(equipe.mb_3_id) %></td>
-              <td><%= link_to equipe.get_membro(equipe.mb_S_id), pessoa_path(equipe.mb_S_id) %></td>
+              <td><%= link_to equipe.membro_1, pessoa_path(equipe.mb_1_id) %></td>
+              <td><%= link_to equipe.membro_2, pessoa_path(equipe.mb_2_id) %></td>
+              <td><%= link_to equipe.membro_3, pessoa_path(equipe.mb_3_id) %></td>
+              <td><%= link_to equipe.membro_s, pessoa_path(equipe.mb_S_id) %></td>
               <td><%= pontuacao %></td>
             </tr>
         <% end %>

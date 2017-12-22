@@ -14,7 +14,8 @@ class AvaliacosController < ApplicationController
 
   # GET /avaliacos/new
   def new
-    @avaliaco = Avaliaco.new
+    @pessoa = Pessoa.find(params[:pessoa_id])
+    @avaliaco = @pessoa.avaliacos.build
   end
 
   # GET /avaliacos/1/edit
@@ -24,11 +25,12 @@ class AvaliacosController < ApplicationController
   # POST /avaliacos
   # POST /avaliacos.json
   def create
-    @avaliaco = Avaliaco.new(avaliaco_params)
+    @pessoa = Pessoa.find(params[:pessoa_id])
+    @avaliaco = @pessoa.avaliacos.build(avaliaco_params)
 
     respond_to do |format|
       if @avaliaco.save
-        format.html { redirect_to @avaliaco, notice: 'Avaliaco was successfully created.' }
+        format.html { redirect_to @pessoa, notice: 'avaliaco was successfully created.' }
         format.json { render :show, status: :created, location: @avaliaco }
       else
         format.html { render :new }
@@ -64,11 +66,14 @@ class AvaliacosController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_avaliaco
+      @pessoa = Pessoa.find(params[:pessoa_id])
       @avaliaco = Avaliaco.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def avaliaco_params
-      params.require(:avaliaco).permit(:avaliacao, :avaliado_id, :avaliador_id)
+      hash = params.require(:avaliaco).permit(:avaliacao)
+      hash[:avaliador_id] = current_pessoa.id
+      hash
     end
 end

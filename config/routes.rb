@@ -1,16 +1,20 @@
 Rails.application.routes.draw do
 
+  devise_for :pessoas, controllers: {registrations: 'pessoas/registrations'}
+
   get 'main_page/index'
   get 'main_page/table'
   root 'main_page#index'
 
-  resources :pessoas
+  resources :pessoas do
+    resources :avaliacos
+  end
   resources :tp_users
   resources :rk_ninjas
   resources :nv_difics
-  resources :missos
+  resources :missos do
+    resources :comentarios
+  end
   resources :equipes
-  resources :comentarios
-  resources :avaliacos
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

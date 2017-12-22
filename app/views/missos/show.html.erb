@@ -30,5 +30,16 @@
   <%= @misso.preco %>
 </p>
 
-<%= link_to 'Edit', edit_misso_path(@misso) %> |
-<%= link_to 'Back', :back %>
+<br/>
+
+<h2>Comentarios:</h2>
+<%= render @misso.comentarios %>
+
+<br/>
+
+<% if current_pessoa.tipo.downcase == "admin" %>
+    <%= link_to 'Editar', edit_misso_path(@misso) %> |
+    <%= link_to 'Deletar', @misso, method: :delete, data: { confirm: 'Are you sure?' } %> |
+<% end %>
+<%= link_to 'Fazer Comentario', new_misso_comentario_path(@misso) %> |
+<%= link_to 'Voltar', :back %>

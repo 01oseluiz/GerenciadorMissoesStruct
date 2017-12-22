@@ -1,29 +1,20 @@
-<%= form_with(model: avaliaco, local: true) do |form| %>
-  <% if avaliaco.errors.any? %>
+<%= form_with(model: [@pessoa, @avaliaco], local: true) do |form| %>
+  <% if @avaliaco.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(avaliaco.errors.count, "error") %> prohibited this avaliaco from being saved:</h2>
+      <h2><%= pluralize(@avaliaco.errors.count, "error") %> prohibited this avaliaco from being saved:</h2>
 
       <ul>
-      <% avaliaco.errors.full_messages.each do |message| %>
+      <% @avaliaco.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
 
+
   <div class="field">
     <%= form.label :avaliacao %>
     <%= form.number_field :avaliacao, id: :avaliaco_avaliacao %>
-  </div>
-
-  <div class="field">
-    <%= form.label :avaliado_id %>
-    <%= form.number_field :avaliado_id, id: :avaliaco_ID_avaliado %>
-  </div>
-
-  <div class="field">
-    <%= form.label :avaliador_id %>
-    <%= form.number_field :avaliador_id, id: :avaliaco_ID_avaliador %>
   </div>
 
   <div class="actions">
