@@ -16,6 +16,21 @@ class Equipe < ApplicationRecord
     Pessoa.find(self.mb_S_id).nome
   end
 
+  def update_media_equipe(pessoa)
+    equipes = Equipe.all
+
+    equipes.each do |equipe|
+      membros = [equipe.mb_1_id, equipe.mb_2_id, equipe.mb_3_id, equipe.mb_S_id]
+
+      membros.each do |membro|
+        if membro == pessoa.id
+          Equipe.update(equipe.id, mediaEq: -1)
+          break
+        end
+      end
+    end
+  end
+
   def best_equipes
     equipes = Equipe.all
     equipes_pontuacao = {}
@@ -31,10 +46,12 @@ class Equipe < ApplicationRecord
 
   def buscar_por(key_busca)
 
-    if key_busca == ""
+    if key_busca == nil
+      []
+    elsif key_busca == ""
       buscar_por_todos
-    elsif key_busca.class == Fixnum
-      busca_por_id(key_busca)
+    elsif !(retorno = busca_por_id(key_busca)).empty?
+      retorno
     elsif verifica_se_busca_por_rank(key_busca)
       busca_por_rank(key_busca)
     else

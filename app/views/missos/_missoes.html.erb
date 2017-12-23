@@ -1,7 +1,12 @@
-<% @missos = Misso.all %>
-
 <br/><h1>Missões</h1>
-<% #TODO- Fazer busca personalizada por missoes %>
+
+<%= form_tag(pessoa_path(@pessoa), method: :get) do %>
+    <%= text_field_tag :buscar_missoes %>
+    <%= submit_tag 'Buscar', name: nil %>
+
+    <% @missos = Misso.new.buscar_por(params[:buscar_missoes]) %>
+<% end %>
+
 <table>
   <thead>
   <tr>

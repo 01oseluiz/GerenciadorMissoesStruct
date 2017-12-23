@@ -1,6 +1,6 @@
 <% if pessoa_signed_in? %>
     <% if @pessoa == current_pessoa %>
-        <%= render 'pessoa_page', pessoa: @pessoa %>
+        <%= render 'pessoa_page', pessoa: @pessoa%>
     <% else %>
         <%= render 'pessoa_perfil', pessoa: @pessoa %>
     <% end %>

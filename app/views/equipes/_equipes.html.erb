@@ -1,7 +1,12 @@
-<% @equipes = Equipe.all %>
-
 <br/><h1>Equipes</h1>
-<% #TODO- buscar por todas as equipes pelo rank do membro superior ou pelo nome ou numero da equipe %>
+
+<%= form_tag(pessoa_path(@pessoa), method: :get) do %>
+    <%= text_field_tag :buscar_equipes %>
+    <%= submit_tag 'Buscar', name: nil %>
+
+    <% @equipes = Equipe.new.buscar_por(params[:buscar_equipes]) %>
+<% end %>
+<br/>
 
 <table>
   <tr>

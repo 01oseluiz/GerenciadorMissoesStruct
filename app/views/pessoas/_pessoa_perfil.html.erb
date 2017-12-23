@@ -37,7 +37,7 @@
 </p>
 
 <% if current_pessoa.tipo == "admin" %>
-    <%= link_to 'Editar', edit_pessoa_registration_path(@pessoa)%> |
+    <%= link_to 'Editar', edit_pessoa_path(@pessoa)%> |
 <% end %>
 
 <%= link_to 'Avaliar Usuario', new_pessoa_avaliaco_path(@pessoa)%> |

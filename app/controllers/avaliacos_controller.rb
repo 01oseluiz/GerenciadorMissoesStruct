@@ -30,6 +30,7 @@ class AvaliacosController < ApplicationController
 
     respond_to do |format|
       if @avaliaco.save
+        Equipe.new.update_media_equipe(@pessoa)
         format.html { redirect_to @pessoa, notice: 'avaliaco was successfully created.' }
         format.json { render :show, status: :created, location: @avaliaco }
       else
