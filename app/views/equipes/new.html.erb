@@ -1,5 +1,14 @@
-<h1>New Equipe</h1>
+<% if pessoa_signed_in? and current_pessoa.tipo.downcase == "admin" %>
 
-<%= render 'form', equipe: @equipe %>
+    <%= flash_mensagem %>
 
-<%= link_to 'Back', :back %>
+    <h1>Montar Equipe</h1>
+
+    <div id="demais_form_box">
+      <%= render 'form', equipe: @equipe %>
+    </div>
+
+    <%= link_to 'Voltar', pessoa_path(current_pessoa) %>
+<% else %>
+    <%= render 'main_page/erro_autenticar_admin' %>
+<% end %>

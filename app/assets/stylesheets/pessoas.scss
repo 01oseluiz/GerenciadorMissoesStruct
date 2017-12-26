@@ -1,3 +1,35 @@
 // Place all the styles related to the Pessoas controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#acessos_usuario{
+  margin-left: 20px;
+}
+
+#acessos_usuario *{
+  margin: 7px 0px;
+}
+
+#buscas {
+  background: black;
+  text-align: center;
+  margin-top: 40px;
+}
+
+#buscas table{
+  margin: auto;
+}
+
+#buscas #equipes{
+  background: #333;
+  float: left;
+  margin-left: 100px;
+  width: 500px;
+}
+
+#buscas #missoes{
+  background: #333;
+  float: right;
+  margin-right: 100px;
+  width: 450px;
+}

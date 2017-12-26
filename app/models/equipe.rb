@@ -16,6 +16,45 @@ class Equipe < ApplicationRecord
     Pessoa.find(self.mb_S_id).nome
   end
 
+  def is_chuunin_membro
+    membros = [self.mb_1_id, self.mb_2_id, self.mb_3_id, self.mb_S_id]
+    val_is_chuunin = false
+
+    for i in 0..3
+      if Pessoa.find(membros[i]).rank.downcase == 'chuunin'
+        val_is_chuunin = true
+      end
+    end
+
+    val_is_chuunin
+  end
+
+  def is_genin_membro
+    membros = [self.mb_1_id, self.mb_2_id, self.mb_3_id, self.mb_S_id]
+    val_is_genin = false
+
+    for i in 0..3
+      if Pessoa.find(membros[i]).rank.downcase == 'genin'
+        val_is_genin = true
+      end
+    end
+
+    val_is_genin
+  end
+
+  def get_opcoes_equipes
+    equipes = Equipe.all
+    equipes_lista = []
+
+    equipes.each do |x|
+      equipes_lista.push([x.nomeEq,x.id])
+    end
+
+    equipes_lista
+  end
+
+
+
   def update_media_equipe(pessoa)
     equipes = Equipe.all
 

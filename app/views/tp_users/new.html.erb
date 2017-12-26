@@ -1,5 +1,13 @@
-<h1>New Tp User</h1>
+<% if false %>
 
-<%= render 'form', tp_user: @tp_user %>
+    <%= flash_mensagem %>
 
-<%= link_to 'Back', :back %>
+    <h1>New Tp User</h1>
+
+    <%= render 'form', tp_user: @tp_user %>
+
+    <%= link_to 'Back', :back %>
+
+<% else %>
+    <%= render 'main_page/erro_pagina_inacessivel' %>
+<% end %>

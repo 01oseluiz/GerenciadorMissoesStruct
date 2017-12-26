@@ -2,28 +2,27 @@ class PessoasController < ApplicationController
   before_action :set_pessoa, only: [:show, :edit, :update]
 
   # GET /pessoas
-  # GET /pessoas.json
-  def index
-    @pessoas = Pessoa.all
-  end
+  #def index
+  #  @pessoas = Pessoa.all
+  #end
 
   # GET /pessoas/new
-  def new
-    @pessoa = Pessoa.new
-  end
+  #def new
+  #  @pessoa = Pessoa.new
+  #end
 
+  # GET /pessoas/1/edit
   def edit
   end
 
+  # PATCH/PUT /pessoas/1
   def update
-    respond_to do |format|
-      if @pessoa.update(pessoa_params)
-        format.html {redirect_to @pessoa, notice: 'Pessoa was successfully updated.'}
-        format.json {render :show, status: :ok, location: @pessoa}
-      else
-        format.html {render :edit}
-        format.json {render json: @pessoa.errors, status: :unprocessable_entity}
-      end
+    if @pessoa.update(pessoa_params)
+      flash[:notice] = "Dados atualizados com sucesso."
+      redirect_to @pessoa
+    else
+      flash[:error] = @pessoa.errors
+      redirect_to edit_pessoa_path(@pessoa)
     end
   end
 

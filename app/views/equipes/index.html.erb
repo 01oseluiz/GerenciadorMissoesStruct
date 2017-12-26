@@ -1,35 +1,41 @@
-<p id="notice"><%= notice %></p>
+<% if false %>
 
-<h1>Equipes</h1>
+    <%= flash_mensagem %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Nomeeq</th>
-      <th>Media da equipe</th>
-      <th>Mb 1</th>
-      <th>Mb 2</th>
-      <th>Mb 3</th>
-      <th>Mb s</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <h1>Equipes</h1>
 
-  <tbody>
-    <% @equipes.each do |equipe| %>
+    <table>
+      <thead>
       <tr>
-        <td><%= link_to equipe.nomeEq, equipe_path(equipe) %></td>
-        <td><%= equipe.mediaEq %></td>
-        <td><%= link_to equipe.membro_1, pessoa_path(equipe.mb_1_id) %></td>
-        <td><%= link_to equipe.membro_2, pessoa_path(equipe.mb_2_id) %></td>
-        <td><%= link_to equipe.membro_3, pessoa_path(equipe.mb_3_id) %></td>
-        <td><%= link_to equipe.membro_s, pessoa_path(equipe.mb_S_id) %></td>
-        <td><%= link_to 'Show', equipe %></td>
+        <th>Nomeeq</th>
+        <th>Media da equipe</th>
+        <th>Mb 1</th>
+        <th>Mb 2</th>
+        <th>Mb 3</th>
+        <th>Mb s</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+      </thead>
 
-<br>
+      <tbody>
+      <% @equipes.each do |equipe| %>
+          <tr>
+            <td><%= link_to equipe.nomeEq, equipe_path(equipe) %></td>
+            <td><%= equipe.mediaEq %></td>
+            <td><%= link_to equipe.membro_1, pessoa_path(equipe.mb_1_id) %></td>
+            <td><%= link_to equipe.membro_2, pessoa_path(equipe.mb_2_id) %></td>
+            <td><%= link_to equipe.membro_3, pessoa_path(equipe.mb_3_id) %></td>
+            <td><%= link_to equipe.membro_s, pessoa_path(equipe.mb_S_id) %></td>
+            <td><%= link_to 'Show', equipe %></td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
 
-<%= link_to 'New Equipe', new_equipe_path %>
+    <br>
+
+    <%= link_to 'New Equipe', new_equipe_path %>
+
+<% else %>
+    <%= render 'main_page/erro_pagina_inacessivel' %>
+<% end %>

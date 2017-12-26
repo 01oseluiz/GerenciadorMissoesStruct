@@ -1,45 +1,54 @@
-<p id="notice"><%= notice %></p>
+<%= flash_mensagem %>
 
-<p>
-  <strong>Nome:</strong>
-  <%= @misso.nome %>
-</p>
+<div id="show_box">
+  <p>
+    <strong>Nome:</strong>
+    <%= @misso.nome %>
+  </p>
 
-<p>
-  <strong>Local:</strong>
-  <%= @misso.local %>
-</p>
+  <p>
+    <strong>Local:</strong>
+    <%= @misso.local %>
+  </p>
 
-<p>
-  <strong>Id nv:</strong>
-  <%= @misso.nv_dific_id %>
-</p>
+  <p>
+    <strong>Nivel de Dificuldade:</strong>
+    <%= @misso.nivel %>
+  </p>
 
-<p>
-  <strong>Id equipe:</strong>
-  <%= @misso.equipe_id %>
-</p>
+  <p>
+    <strong>Equipe:</strong>
+    <% if @misso.equipe_id == nil %>
+        <%= @misso.equipe %>
+    <% else %>
+        <%= link_to @misso.equipe, equipe_path(@misso.equipe_id) %>
+    <% end %>
+  </p>
 
-<p>
-  <strong>Id pessoa:</strong>
-  <%= @misso.pessoa_id %>
-</p>
+  <p>
+    <strong>Responsável:</strong>
+    <%= link_to @misso.responsavel, pessoa_path(@misso.pessoa_id) %>
+  </p>
 
-<p>
-  <strong>Preco:</strong>
-  <%= @misso.preco %>
-</p>
-
+  <p>
+    <strong>Preco:</strong>
+    <%= @misso.preco %>
+  </p>
+</div>
 <br/>
 
 <h2>Comentarios:</h2>
-<%= render @misso.comentarios %>
+<% if @misso.comentarios.count == 0 %>
+    <p>Seja o Primeiro a comentar esta missão!</p>
+<% else %>
+    <%= render @misso.comentarios %>
+<% end %>
 
 <br/>
 
-<% if current_pessoa.tipo.downcase == "admin" %>
+<% if current_pessoa.tipo.downcase == "admin" or current_pessoa.id == @misso.pessoa_id %>
     <%= link_to 'Editar', edit_misso_path(@misso) %> |
-    <%= link_to 'Deletar', @misso, method: :delete, data: { confirm: 'Are you sure?' } %> |
+    <%= link_to 'Deletar', @misso, method: :delete, data: {confirm: 'Tem certeza?'} %> |
 <% end %>
 <%= link_to 'Fazer Comentario', new_misso_comentario_path(@misso) %> |
-<%= link_to 'Voltar', :back %>
+<%= link_to 'Voltar', pessoa_path(current_pessoa) %>

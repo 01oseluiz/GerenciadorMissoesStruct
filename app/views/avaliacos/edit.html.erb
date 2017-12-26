@@ -1,6 +1,13 @@
-<h1>Editing Avaliaco</h1>
+<% if false %>
+    <%= flash_mensagem %>
 
-<%= render 'form', avaliaco: @avaliaco %>
+    <h1>Editing Avaliaco</h1>
 
-<%= link_to 'Show', @avaliaco %> |
-<%= link_to 'Back', :back %>
+    <%= render 'form', avaliaco: @avaliaco %>
+
+    <%= link_to 'Ver', @avaliaco %> |
+    <%= link_to 'Voltar', :back %>
+
+<% else %>
+    <%= render 'main_page/erro_pagina_inacessivel' %>
+<% end %>

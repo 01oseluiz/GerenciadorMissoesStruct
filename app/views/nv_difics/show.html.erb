@@ -1,14 +1,20 @@
-<p id="notice"><%= notice %></p>
+<% if false %>
 
-<p>
-  <strong>Nivel:</strong>
-  <%= @nv_dific.nivel %>
-</p>
+    <%= flash_mensagem %>
 
-<p>
-  <strong>Preco:</strong>
-  <%= @nv_dific.preco %>
-</p>
+    <p>
+      <strong>Nivel:</strong>
+      <%= @nv_dific.nivel %>
+    </p>
 
-<%= link_to 'Edit', edit_nv_dific_path(@nv_dific) %> |
-<%= link_to 'Back', :back %>
+    <p>
+      <strong>Preco:</strong>
+      <%= @nv_dific.preco %>
+    </p>
+
+    <%= link_to 'Edita', edit_nv_dific_path(@nv_dific) %> |
+    <%= link_to 'Voltar', :back %>
+
+<% else %>
+    <%= render 'main_page/erro_pagina_inacessivel' %>
+<% end %>

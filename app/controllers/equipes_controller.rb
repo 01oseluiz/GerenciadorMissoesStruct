@@ -2,15 +2,13 @@ class EquipesController < ApplicationController
   before_action :set_equipe, only: [:show, :edit, :update, :destroy]
 
   # GET /equipes
-  # GET /equipes.json
-  def index
-    @equipes = Equipe.all
-  end
+  #def index
+  #  @equipes = Equipe.all
+  #end
 
   # GET /equipes/1
-  # GET /equipes/1.json
-  def show
-  end
+  #def show
+  #end
 
   # GET /equipes/new
   def new
@@ -22,53 +20,47 @@ class EquipesController < ApplicationController
   end
 
   # POST /equipes
-  # POST /equipes.json
   def create
     @equipe = Equipe.new(equipe_params)
 
     unless validar_equipe(@equipe)
+      redirect_to new_equipe_path
       return
     end
 
-    respond_to do |format|
-      if @equipe.save
-        format.html {redirect_to @equipe, notice: 'Equipe was successfully created.'}
-        format.json {render :show, status: :created, location: @equipe}
-      else
-        format.html {render :new}
-        format.json {render json: @equipe.errors, status: :unprocessable_entity}
-      end
+    if @equipe.save
+      flash[:notice] = "Equipe criada com sucesso."
+      redirect_to @equipe
+    else
+      flash[:error] = @equipe.erros
+      redirect_to new_equipe_path
     end
   end
 
   # PATCH/PUT /equipes/1
-  # PATCH/PUT /equipes/1.json
   def update
-
     unless validar_equipe(Equipe.new(equipe_params))
+      redirect_to edit_equipe_path(@equipe)
       return
     end
 
-    respond_to do |format|
-      if @equipe.update(equipe_params)
-        format.html {redirect_to @equipe, notice: 'Equipe was successfully updated.'}
-        format.json {render :show, status: :ok, location: @equipe}
-      else
-        format.html {render :edit}
-        format.json {render json: @equipe.errors, status: :unprocessable_entity}
-      end
+    if @equipe.update(equipe_params)
+      flash[:notice] = "Equipe atualizada com sucesso."
+      redirect_to @equipe
+    else
+      flash[:error] = @equipe.errors
+      redirect_to edit_equipe_path(@equipe)
     end
   end
 
   # DELETE /equipes/1
-  # DELETE /equipes/1.json
-  def destroy
-    @equipe.destroy
-    respond_to do |format|
-      format.html {redirect_to equipes_url, notice: 'Equipe was successfully destroyed.'}
-      format.json {head :no_content}
-    end
-  end
+  #def destroy
+  #  @equipe.destroy
+  #  respond_to do |format|
+  #    format.html {redirect_to equipes_url, notice: 'Equipe was successfully destroyed.'}
+  #    format.json {head :no_content}
+  #  end
+  #end
 
   private
   # Use callbacks to share common setup or constraints between actions.
@@ -86,18 +78,16 @@ class EquipesController < ApplicationController
     equipe_valida = true
     if is_raikage_membro(equipe)
       equipe_valida = false
-      notificar('O Raikage não pode estar em uma equipe.')
+      flash[:warning] = "O Raikage não pode estar em uma equipe."
 
     elsif !is_anbu_equipe(equipe)
       equipe_valida = false
-      notificar('Os ninjas ANBU só podem estar em uma equipe em que todos os
-membros são ANBU')
+      flash[:warning] = "Os ninjas ANBU só podem estar em uma equipe em que todos os membros são ANBU"
 
     elsif is_medico_membro(equipe)
       unless is_medico_equipe(equipe)
         equipe_valida = false
-        notificar('Os ninjas médicos devem estar em uma equipe formada por 3 ninjas
-médicos, sendo um deles o superior, e 1 ninja chuunin ou jounin.')
+        flash[:warning] = "Os ninjas médicos devem estar em uma equipe formada por 3 ninjas médicos, sendo um deles o superior, e 1 ninja chuunin ou jounin."
 
       end
     end
@@ -110,7 +100,7 @@ médicos, sendo um deles o superior, e 1 ninja chuunin ou jounin.')
     val_is_medico = false
 
     for i in 0..3
-      if Pessoa.find(membros[i]).rank == 'Medico'
+      if Pessoa.find(membros[i]).rank.downcase == 'medico'
         val_is_medico = true
       end
     end
@@ -124,15 +114,15 @@ médicos, sendo um deles o superior, e 1 ninja chuunin ou jounin.')
     count_medicos = 0
 
     for i in 0..3
-      if Pessoa.find(membros[i]).rank == 'Medico'
+      if Pessoa.find(membros[i]).rank.downcase == 'medico'
         count_medicos += 1
-      elsif Pessoa.find(membros[i]).rank != 'Chuunin' and
-          Pessoa.find(membros[i]).rank != 'Jounin'
+      elsif Pessoa.find(membros[i]).rank.downcase != 'chuunin' and
+          Pessoa.find(membros[i]).rank.downcase != 'jounin'
         return false
       end
     end
 
-    ((count_medicos == 3) and (Pessoa.find(membros[3]).rank == 'Medico'))
+    ((count_medicos == 3) and (Pessoa.find(membros[3]).rank.downcase == 'medico'))
   end
 
   # Verifica se a equipe e formada por anbus
@@ -141,7 +131,7 @@ médicos, sendo um deles o superior, e 1 ninja chuunin ou jounin.')
     val_is_anbu = true
 
     for i in 0..3
-      val_is_anbu = (val_is_anbu and (Pessoa.find(membros[i]).rank == 'ANBU'))
+      val_is_anbu = (val_is_anbu and (Pessoa.find(membros[i]).rank.downcase == 'anbu'))
     end
   end
 
@@ -151,18 +141,11 @@ médicos, sendo um deles o superior, e 1 ninja chuunin ou jounin.')
     val_is_raikage = false
 
     for i in 0..3
-      if Pessoa.find(membros[i]).rank == 'Raikage'
+      if Pessoa.find(membros[i]).rank.downcase == 'raikage'
         val_is_raikage = true
       end
     end
 
     val_is_raikage
-  end
-
-  def notificar(mensagem)
-    respond_to do |format|
-      format.html {redirect_to equipes_url, notice: mensagem}
-      format.json {render :new, status: :ok, location: new_equipe_url}
-    end
   end
 end

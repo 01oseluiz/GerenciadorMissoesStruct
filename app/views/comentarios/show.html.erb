@@ -1,14 +1,22 @@
-<p>
-  <strong>Cometario:</strong>
-  <%= comentario.cometario %>
-</p>
+<% if false %>
 
-<p>
-  <strong>Id missao:</strong>
-  <%= comentario.misso_id %>
-</p>
+    <%= flash_mensagem %>
 
-<p>
-  <strong>Id pessoa:</strong>
-  <%= comentario.pessoa_id %>
-</p>
+    <p>
+      <strong>Cometario:</strong>
+      <%= comentario.cometario %>
+    </p>
+
+    <p>
+      <strong>Missao:</strong>
+      <%= comentario.misso_id %>
+    </p>
+
+    <p>
+      <strong>Pessoa:</strong>
+      <%= comentario.pessoa_id %>
+    </p>
+
+<% else %>
+    <%= render 'main_page/erro_pagina_inacessivel' %>
+<% end %>

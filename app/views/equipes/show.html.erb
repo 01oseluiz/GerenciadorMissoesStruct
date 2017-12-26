@@ -1,34 +1,44 @@
-<p id="notice"><%= notice %></p>
+<% if pessoa_signed_in? %>
 
-<p>
-  <strong>Nomeeq:</strong>
-  <%= @equipe.nomeEq %>
-</p>
+    <%= flash_mensagem %>
 
-<p>
-  <strong>Media da equipe:</strong>
-  <%= @equipe.mediaEq %>
-</p>
+    <div id="show_box">
+      <p>
+        <strong>Nomeeq:</strong>
+        <%= @equipe.nomeEq %>
+      </p>
 
-<p>
-  <strong>Mb 1:</strong>
-  <%= link_to @equipe.membro_1, pessoa_path(@equipe.mb_1_id) %>
-</p>
+      <p>
+        <strong>Media da equipe:</strong>
+        <%= @equipe.mediaEq %>
+      </p>
 
-<p>
-  <strong>Mb 2:</strong>
-  <%= link_to @equipe.membro_2, pessoa_path(@equipe.mb_2_id) %>
-</p>
+      <p>
+        <strong>Membro 1:</strong>
+        <%= link_to @equipe.membro_1, pessoa_path(@equipe.mb_1_id) %>
+      </p>
 
-<p>
-  <strong>Mb 3:</strong>
-  <%= link_to @equipe.membro_3, pessoa_path(@equipe.mb_3_id) %>
-</p>
+      <p>
+        <strong>Membro 2:</strong>
+        <%= link_to @equipe.membro_2, pessoa_path(@equipe.mb_2_id) %>
+      </p>
 
-<p>
-  <strong>Mb s:</strong>
-  <%= link_to @equipe.membro_s, pessoa_path(@equipe.mb_S_id) %>
-</p>
+      <p>
+        <strong>Membro 3:</strong>
+        <%= link_to @equipe.membro_3, pessoa_path(@equipe.mb_3_id) %>
+      </p>
 
-<%= link_to 'Editar', edit_equipe_path(@equipe) %> |
-<%= link_to 'Voltar', :back %>
+      <p>
+        <strong>Membro Superior:</strong>
+        <%= link_to @equipe.membro_s, pessoa_path(@equipe.mb_S_id) %>
+      </p>
+    </div>
+
+    <% if current_pessoa.tipo.downcase == "admin" %>
+        <%= link_to 'Editar', edit_equipe_path(@equipe) %> |
+    <% end %>
+    <%= link_to 'Voltar', :back %>
+
+<% else %>
+    <%= render 'main_page/erro_sem_login' %>
+<% end %>

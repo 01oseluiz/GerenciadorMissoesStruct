@@ -1,25 +1,31 @@
-<p id="notice"><%= notice %></p>
+<% if false %>
 
-<h1>Comentarios</h1>
+    <%= flash_mensagem %>
 
-<table>
-  <thead>
-  <tr>
-    <th>Cometario</th>
-    <th>Missão</th>
-    <th>Comentado por</th>
-    <th colspan="3"></th>
-  </tr>
-  </thead>
+    <h1>Comentarios</h1>
 
-  <tbody>
-  <% @comentarios.each do |comentario| %>
+    <table>
+      <thead>
       <tr>
-        <td><%= comentario.cometario %></td>
-        <td><%= link_to Misso.find(comentario.misso_id).nome, misso_path(comentario.misso_id) %></td>
-        <td><%= link_to Pessoa.find(comentario.pessoa_id).nome, pessoa_path(comentario.pessoa_id) %></td>
-        <td><%= link_to 'Show', comentario %></td>
+        <th>Cometario</th>
+        <th>Missão</th>
+        <th>Comentado por</th>
+        <th colspan="3"></th>
       </tr>
-  <% end %>
-  </tbody>
-</table>
+      </thead>
+
+      <tbody>
+      <% @comentarios.each do |comentario| %>
+          <tr>
+            <td><%= comentario.cometario %></td>
+            <td><%= link_to Misso.find(comentario.misso_id).nome, misso_path(comentario.misso_id) %></td>
+            <td><%= link_to Pessoa.find(comentario.pessoa_id).nome, pessoa_path(comentario.pessoa_id) %></td>
+            <td><%= link_to 'Show', comentario %></td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+
+<% else %>
+    <%= render 'main_page/erro_pagina_inacessivel' %>
+<% end %>

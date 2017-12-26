@@ -13,4 +13,15 @@ class Pessoa < ApplicationRecord
   def tipo
     TpUser.find(tp_user_id).tipo
   end
+
+  def get_opcoes_pessoas
+    pessoas = Pessoa.all
+    pessoas_lista = []
+
+    pessoas.each do |x|
+      pessoas_lista.push([x.nome,x.id])
+    end
+
+    pessoas_lista
+  end
 end

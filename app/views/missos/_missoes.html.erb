@@ -6,31 +6,28 @@
 
     <% @missos = Misso.new.buscar_por(params[:buscar_missoes]) %>
 <% end %>
+<br/>
 
 <table>
-  <thead>
   <tr>
     <th>Nome |</th>
     <th>Local |</th>
-    <th>Id nv |</th>
-    <th>Id equipe |</th>
-    <th>Id pessoa |</th>
-    <th>Preco</th>
+    <th>Nivel |</th>
+    <th>Equipe |</th>
+    <th>Responsável |</th>
+    <th>Preço</th>
     <th colspan="3"></th>
   </tr>
-  </thead>
 
-  <tbody>
   <% @missos.each do |misso| %>
       <tr>
         <td><%= misso.nome %></td>
         <td><%= misso.local %></td>
-        <td><%= misso.nv_dific_id %></td>
-        <td><%= misso.equipe_id %></td>
-        <td><%= misso.pessoa_id %></td>
+        <td><%= misso.nivel %></td>
+        <td><%= misso.equipe %></td>
+        <td><%= misso.responsavel %></td>
         <td><%= misso.preco %></td>
         <td><%= link_to 'Ver', misso %></td>
       </tr>
   <% end %>
-  </tbody>
 </table>

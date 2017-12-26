@@ -1,10 +1,12 @@
 <% if pessoa_signed_in? %>
-    <% if @pessoa == current_pessoa %>
-        <%= render 'pessoa_page', pessoa: @pessoa%>
-    <% else %>
-        <%= render 'pessoa_perfil', pessoa: @pessoa %>
-    <% end %>
+
+    <%= flash_mensagem %>
+
+      <% if @pessoa == current_pessoa %>
+          <%= render 'pessoa_page', pessoa: @pessoa %>
+      <% else %>
+          <%= render 'pessoa_perfil', pessoa: @pessoa %>
+      <% end %>
 <% else %>
-    <h1>Faça login para visualizar esta pagina</h1>
-    <%= link_to 'Voltar', :back %>
+    <%= render 'main_page/erro_sem_login' %>
 <% end %>

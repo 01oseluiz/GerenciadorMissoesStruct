@@ -1,6 +1,16 @@
-<h1>Editing Misso</h1>
+<% if pessoa_signed_in? and current_pessoa.tipo.downcase == "admin" %>
 
-<%= render 'form', misso: @misso %>
+    <%= flash_mensagem %>
 
-<%= link_to 'Show', @misso %> |
-<%= link_to 'Back', :back %>
+    <h1>Editar Missao</h1>
+
+    <div id="demais_form_box">
+      <%= render 'form', misso: @misso %>
+    </div>
+
+    <%= link_to 'Ver', @misso %> |
+    <%= link_to 'Voltar', misso_path(@misso) %>
+
+<% else %>
+    <%= render 'main_page/erro_autenticar_admin' %>
+<% end %>

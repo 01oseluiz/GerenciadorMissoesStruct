@@ -1,13 +1,23 @@
-<h1>Avaliar <%= @pessoa.nome%></h1>
+<% if pessoa_signed_in? %>
 
-<% if Avaliaco.where(pessoa_id: @pessoa.id, avaliador_id: current_pessoa.id).empty? %>
-    <% if @pessoa != current_pessoa %>
-        <%= render 'form' %>
+    <% if Avaliaco.where(pessoa_id: @pessoa.id, avaliador_id: current_pessoa.id).empty? %>
+        <% if @pessoa != current_pessoa %>
+            <%= flash_mensagem %>
 
-        <%= link_to 'Voltar', :back %>
+            <h1>Avaliar <%= @pessoa.nome %></h1>
+
+            <div id="demais_form_box">
+              <%= render 'form' %>
+            </div>
+
+            <%= link_to 'Voltar', :back %>
+        <% else %>
+            <h3>Você não pode se auto-avaliar</h3>
+        <% end %>
     <% else %>
-        <h3>Você não pode se auto-avaliar</h3>
+        <h3>Você já avaliou esta pessoa.</h3>
     <% end %>
+
 <% else %>
-    <h3>Você já avaliou esta pessoa.</h3>
+    <%= render 'main_page/erro_sem_login' %>
 <% end %>

@@ -1,5 +1,16 @@
-<h1>New Misso</h1>
+<% if pessoa_signed_in? and
+    (current_pessoa.tipo.downcase == "admin" or current_pessoa.tipo.downcase == "solicitante") %>
 
-<%= render 'form', misso: @misso %>
+    <%= flash_mensagem %>
+    <h1>Criar Missão</h1>
 
-<%= link_to 'Back', :back %>
+    <div id="demais_form_box">
+      <%= render 'form', misso: @misso %>
+    </div>
+
+    <%= link_to 'Voltar', pessoa_path(current_pessoa) %>
+
+<% else %>
+    <h3>Página disponível para: 'Admin' ou 'Solicitante'.</h3>
+    <%= render 'main_page/erro_sem_login' %>
+<% end %>

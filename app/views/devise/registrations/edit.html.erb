@@ -4,78 +4,89 @@
     <%= devise_error_messages! %>
 
     <!-------------- DADOS PESSOAIS---------------->
-    <div class="field">
-      <%= f.label :nome %>
-      <%= f.text_field :nome %>
-    </div><br/>
+    <h4 style="border-bottom: 2px solid #aaa">Dados Pessoais</h4>
+    <div id="devise_form_box">
 
-    <div class="field">
-      <%= f.label :identidade %>
-      <%= f.text_field :identidade %>
-    </div><br/>
+      <div class="field">
+        <%= f.label :nome %>
+        <%= f.text_field :nome %>
+      </div>
+      <br/>
 
-    <div class="field">
-      <%= f.label :telefone %>
-      <%= f.telephone_field :telefone, placeholder: '(99) 99999-9999' %>
-    </div><br/>
+      <div class="field">
+        <%= f.label :identidade %>
+        <%= f.text_field :identidade %>
+      </div>
+      <br/>
 
-    <div class="field">
-      <%= f.label :Data_de_Nascimento %>
-      <%= f.date_select :dataNasc %>
-    </div><br/>
+      <div class="field">
+        <%= f.label :telefone %>
+        <%= f.telephone_field :telefone, placeholder: '(99) 99999-9999' %>
+      </div>
+      <br/>
 
-    <div class="field">
-      <%= f.label :endereco %>
-      <%= f.text_field :endereco %>
-    </div><br/>
+      <div class="field">
+        <%= f.label :Data_de_Nascimento %>
+        <%= f.date_select :dataNasc %>
+      </div>
+      <br/>
 
-    <div class="field">
-      <%= f.label :Rank %>
-      <% if current_pessoa.tipo.downcase == "admin" %>
-          <%= f.select(:rk_ninja_id, RkNinja.new.get_rank_options_admin) %>
-      <% else %>
-          <%= f.select(:rk_ninja_id, RkNinja.new.get_rank_options) %>
-      <% end %>
+      <div class="field">
+        <%= f.label :endereco %>
+        <%= f.text_field :endereco %>
+      </div>
+      <br/>
+
+      <div class="field">
+        <%= f.label :Rank %>
+        <% if current_pessoa.tipo.downcase == "admin" %>
+            <%= f.select(:rk_ninja_id, RkNinja.new.get_rank_options_admin) %>
+        <% else %>
+            <%= f.select(:rk_ninja_id, RkNinja.new.get_rank_options) %>
+        <% end %>
+      </div>
     </div><br/>
 
     <!-------------- DADOS DE CONTA---------------->
+    <h4 style="border-bottom: 2px solid #aaa">Dados de Conta</h4>
+    <div id="devise_form_box">
+      <div class="field">
+        <%= f.label :Usuario %><br/>
+        <%= f.text_field :user_name %>
+      </div>
 
-    <div class="field">
-      <%= f.label :Usuario %><br/>
-      <%= f.text_field :user_name %>
-    </div>
+      <div class="field">
+        <%= f.label :email %><br/>
+        <%= f.email_field :email %>
+      </div>
 
-    <div class="field">
-      <%= f.label :email %><br/>
-      <%= f.email_field :email %>
-    </div>
-
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-    <% end %>
-
-    <div class="field">
-      <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br/>
-      <%= f.password_field :password, autocomplete: "off" %>
-      <% if @minimum_password_length %>
-          <br/>
-          <em><%= @minimum_password_length %> characters minimum</em>
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
       <% end %>
-    </div>
 
-    <div class="field">
-      <%= f.label :password_confirmation %><br/>
-      <%= f.password_field :password_confirmation, autocomplete: "off"%>
-    </div>
+      <div class="field">
+        <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br/>
+        <%= f.password_field :password, autocomplete: "off" %>
+        <% if @minimum_password_length %>
+            <br/>
+            <em><%= @minimum_password_length %> characters minimum</em>
+        <% end %>
+      </div>
 
-    <div class="field">
-      <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br/>
-      <%= f.password_field :current_password, autocomplete: "off" %>
-    </div>
+      <div class="field">
+        <%= f.label :password_confirmation %><br/>
+        <%= f.password_field :password_confirmation, autocomplete: "off" %>
+      </div>
 
-    <div class="actions">
-      <%= f.submit "Update" %>
+      <div class="field">
+        <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br/>
+        <%= f.password_field :current_password, autocomplete: "off" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Enviar" %>
+      </div>
     </div>
 <% end %>
 
-<%= link_to "Voltar", :back %>
+<%= link_to "Voltar", pessoa_path(current_pessoa) %>

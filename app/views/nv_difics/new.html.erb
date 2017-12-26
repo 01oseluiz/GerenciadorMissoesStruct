@@ -1,5 +1,13 @@
-<h1>New Nv Dific</h1>
+<% if false %>
 
-<%= render 'form', nv_dific: @nv_dific %>
+    <%= flash_mensagem %>
 
-<%= link_to 'Back', :back %>
+    <h1>New Nv Dific</h1>
+
+    <%= render 'form', nv_dific: @nv_dific %>
+
+    <%= link_to 'Voltar', :back %>
+
+<% else %>
+    <%= render 'main_page/erro_pagina_inacessivel' %>
+<% end %>

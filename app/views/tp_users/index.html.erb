@@ -1,27 +1,33 @@
-<p id="notice"><%= notice %></p>
+<% if false %>
 
-<h1>Tp Users</h1>
+    <%= flash_mensagem %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Tipo</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <h1>Tp Users</h1>
 
-  <tbody>
-    <% @tp_users.each do |tp_user| %>
+    <table>
+      <thead>
       <tr>
-        <td><%= tp_user.tipo %></td>
-        <td><%= link_to 'Show', tp_user %></td>
-        <td><%= link_to 'Edit', edit_tp_user_path(tp_user) %></td>
-        <td><%= link_to 'Destroy', tp_user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Tipo</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+      </thead>
 
-<br>
+      <tbody>
+      <% @tp_users.each do |tp_user| %>
+          <tr>
+            <td><%= tp_user.tipo %></td>
+            <td><%= link_to 'Show', tp_user %></td>
+            <td><%= link_to 'Edit', edit_tp_user_path(tp_user) %></td>
+            <td><%= link_to 'Destroy', tp_user, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
 
-<%= link_to 'New Tp User', new_tp_user_path %>
+    <br>
+
+    <%= link_to 'New Tp User', new_tp_user_path %>
+
+<% else %>
+    <%= render 'main_page/erro_pagina_inacessivel' %>
+<% end %>

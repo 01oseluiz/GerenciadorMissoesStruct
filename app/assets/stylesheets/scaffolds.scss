@@ -1,6 +1,6 @@
 body {
   background-color: #fff;
-  color: #333;
+  color: dodgerblue;
   margin: 33px;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
@@ -20,15 +20,14 @@ pre {
 }
 
 a {
-  color: #000;
+  color: cornflowerblue;
 
   &:visited {
-    color: #666;
+    color: cornflowerblue;
   }
 
   &:hover {
-    color: #fff;
-    background-color: #000;
+    color: #15f;
   }
 }
 
@@ -46,9 +45,18 @@ div {
   }
 }
 
-#notice {
+body #notice {
   color: green;
 }
+
+body #warning {
+  color: darkorange;
+}
+
+body #error{
+  color: darkred;
+}
+
 
 .field_with_errors {
   padding: 2px;
@@ -81,4 +89,25 @@ div {
 
 label {
   display: block;
+}
+
+#devise_form_box{
+  background: #333;
+  padding: 15px;
+  margin-bottom: 10px;
+  width: 250px;
+}
+
+#demais_form_box{
+  background: #333;
+  padding: 15px;
+  margin-bottom: 10px;
+  width: 250px;
+}
+
+#show_box{
+  background: #333;
+  padding: 15px;
+  margin-bottom: 10px;
+  width: 250px;
 }

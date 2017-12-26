@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   devise_for :pessoas, controllers: {registrations: 'pessoas/registrations'}
 
   get 'main_page/index'
-  get 'main_page/table'
   root 'main_page#index'
 
   resources :pessoas do

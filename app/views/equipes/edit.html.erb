@@ -1,6 +1,16 @@
-<h1>Editing Equipe</h1>
+<% if pessoa_signed_in? and current_pessoa.tipo.downcase == "admin" %>
 
-<%= render 'form', equipe: @equipe %>
+    <%= flash_mensagem %>
 
-<%= link_to 'Show', @equipe %> |
-<%= link_to 'Back', :back %>
+    <h1>Editar Equipe</h1>
+
+    <div id="demais_form_box">
+      <%= render 'form', equipe: @equipe %>
+    </div>
+
+    <%= link_to 'Ver', @equipe %> |
+    <%= link_to 'Voltar', equipe_path(@equipe) %>
+
+<% else %>
+    <%= render 'main_page/erro_autenticar_admin' %>
+<% end %>

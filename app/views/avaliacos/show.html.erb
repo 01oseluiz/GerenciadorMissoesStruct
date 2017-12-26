@@ -1,19 +1,25 @@
-<p id="notice"><%= notice %></p>
+<% if false %>
 
-<p>
-  <strong>Avaliacao:</strong>
-  <%= @avaliaco.avaliacao %>
-</p>
+    <%= flash_mensagem %>
 
-<p>
-  <strong>Id avaliado:</strong>
-  <%= @avaliaco.avaliado_id %>
-</p>
+    <p>
+      <strong>Avaliacao:</strong>
+      <%= @avaliaco.avaliacao %>
+    </p>
 
-<p>
-  <strong>Id avaliador:</strong>
-  <%= @avaliaco.avaliador_id %>
-</p>
+    <p>
+      <strong>Avaliado:</strong>
+      <%= @avaliaco.avaliado_id %>
+    </p>
 
-<%= link_to 'Edit', edit_pessoa_avaliaco_path(@avaliaco) %> |
-<%= link_to 'Back', :back %>
+    <p>
+      <strong>Avaliador:</strong>
+      <%= @avaliaco.avaliador_id %>
+    </p>
+
+    <%= link_to 'Editar', edit_pessoa_avaliaco_path(@avaliaco) %> |
+    <%= link_to 'Voltar', :back %>
+
+<% else %>
+    <%= render 'main_page/erro_pagina_inacessivel' %>
+<% end %>

@@ -4,6 +4,8 @@ class Misso < ApplicationRecord
   def buscar_por(key_busca)
     if key_busca == ""
       buscar_por_todos
+    elsif key_busca == "--"
+      buscar_por_sem_equipe
     elsif !(retorno = buscar_por_id(key_busca)).empty?
       retorno
     elsif !(retorno = buscar_por_nome(key_busca)).empty?
@@ -19,10 +21,30 @@ class Misso < ApplicationRecord
     end
   end
 
+  def nivel
+    NvDific.find(self.nv_dific_id).nivel
+  end
+
+  def equipe
+    if self.equipe_id == nil
+      "--"
+    else
+      Equipe.find(self.equipe_id).nomeEq
+    end
+  end
+
+  def responsavel
+    Pessoa.find(self.pessoa_id).nome
+  end
+
   private
 
   def buscar_por_todos
     Misso.all
+  end
+
+  def buscar_por_sem_equipe
+    Misso.where(equipe_id: [false,nil])
   end
 
   def buscar_por_id(key_busca)

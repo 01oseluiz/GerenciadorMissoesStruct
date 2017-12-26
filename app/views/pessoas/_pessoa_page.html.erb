@@ -1,20 +1,21 @@
-<h1>Bem Vindo <%= @pessoa.nome %></h1>
+<div id="bem_vindo">
+  <h1>Bem Vindo <%= @pessoa.nome %></h1>
+  <h3>(<%= @pessoa.tipo %> / <%= @pessoa.rank %>)</h3>
+</div>
 
-<% if @pessoa.tipo.downcase == "admin" %>
-    <h2>admin</h2>
-    <h5><%= link_to 'Criar missão', new_misso_path %></h5>
-    <h5><%= link_to 'Montar uma equipe', new_equipe_path %></h5>
-<% elsif @pessoa.tipo.downcase == "solicitante" %>
-    <h2>solicitante</h2>
-    <h5><%= link_to 'criar missão', new_misso_path %></h5>
-    <h5>criar uma missao, enviar e-mail para raikage informando a criação da missao</h5>
-<% else %>
-    <h2>ninja</h2>
-<% end %>
+<div id="acessos_usuario">
+  <% if @pessoa.tipo.downcase == "admin" %>
+      <h5><%= link_to 'Criar missão', new_misso_path %></h5>
+      <h5><%= link_to 'Montar uma equipe', new_equipe_path %></h5>
+  <% elsif @pessoa.tipo.downcase == "solicitante" %>
+      <h5><%= link_to 'criar missão', new_misso_path %></h5>
+  <% end %>
+  <h5><%= link_to 'Editar minha conta', edit_pessoa_registration_path(@pessoa) %></h5>
+  <h5><%= link_to 'Voltar', main_page_index_path %></h5>
+</div>
 
-<%= render 'equipes/equipes'%>
+<div id="buscas">
+    <div id="equipes"><%= render 'equipes/equipes' %></div>
 
-<%= render 'missos/missoes'%>
-
-<br/><%= link_to 'Editar minha conta', edit_pessoa_registration_path(@pessoa)%> |
-<%= link_to 'Voltar', :back %>
+    <div id="missoes"><%= render 'missos/missoes' %></div>
+</div>

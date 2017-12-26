@@ -1,9 +1,15 @@
-<p id="notice"><%= notice %></p>
+<% if false %>
 
-<p>
-  <strong>Rank:</strong>
-  <%= @rk_ninja.rank %>
-</p>
+    <%= flash_mensagem %>
 
-<%= link_to 'Edit', edit_rk_ninja_path(@rk_ninja) %> |
-<%= link_to 'Back', :back %>
+    <p>
+      <strong>Rank:</strong>
+      <%= @rk_ninja.rank %>
+    </p>
+
+    <%= link_to 'Edit', edit_rk_ninja_path(@rk_ninja) %> |
+    <%= link_to 'Back', :back %>
+
+<% else %>
+    <%= render 'main_page/erro_pagina_inacessivel' %>
+<% end %>

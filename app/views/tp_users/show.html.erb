@@ -1,9 +1,15 @@
-<p id="notice"><%= notice %></p>
+<% if false %>
 
-<p>
-  <strong>Tipo:</strong>
-  <%= @tp_user.tipo %>
-</p>
+    <%= flash_mensagem %>
 
-<%= link_to 'Edit', edit_tp_user_path(@tp_user) %> |
-<%= link_to 'Back', :back %>
+    <p>
+      <strong>Tipo:</strong>
+      <%= @tp_user.tipo %>
+    </p>
+
+    <%= link_to 'Edit', edit_tp_user_path(@tp_user) %> |
+    <%= link_to 'Back', :back %>
+
+<% else %>
+    <%= render 'main_page/erro_pagina_inacessivel' %>
+<% end %>

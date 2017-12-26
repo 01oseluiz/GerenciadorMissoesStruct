@@ -17,26 +17,26 @@
   </div>
 
   <div class="field">
-    <%= form.label :mb_1_id %>
-    <%= form.number_field :mb_1_id, id: :equipe_mb_1 %>
+    <%= form.label :Membro_1 %>
+    <%= form.select :mb_1_id, Pessoa.new.get_opcoes_pessoas %>
   </div>
 
   <div class="field">
-    <%= form.label :mb_2_id %>
-    <%= form.number_field :mb_2_id, id: :equipe_mb_2 %>
+    <%= form.label :Membro_2 %>
+    <%= form.select :mb_2_id, Pessoa.new.get_opcoes_pessoas %>
   </div>
 
   <div class="field">
-    <%= form.label :mb_3_id %>
-    <%= form.number_field :mb_3_id, id: :equipe_mb_3 %>
+    <%= form.label :Membro_3 %>
+    <%= form.select :mb_3_id, Pessoa.new.get_opcoes_pessoas %>
   </div>
 
   <div class="field">
-    <%= form.label :mb_S_id %>
-    <%= form.number_field :mb_S_id, id: :equipe_mb_S %>
+    <%= form.label :Membro_superior %>
+    <%= form.select :mb_S_id, Pessoa.new.get_opcoes_pessoas %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Enviar" %>
   </div>
 <% end %>

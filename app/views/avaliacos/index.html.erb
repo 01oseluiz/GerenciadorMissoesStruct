@@ -1,25 +1,31 @@
-<p id="notice"><%= notice %></p>
+<% if false %>
 
-<h1>Avaliacos</h1>
+    <%= flash_mensagem %>
 
-<table>
-  <thead>
-  <tr>
-    <th>Avaliacao</th>
-    <th>Id avaliado</th>
-    <th>Id avaliador</th>
-    <th colspan="3"></th>
-  </tr>
-  </thead>
+    <h1>Avaliacos</h1>
 
-  <tbody>
-  <% @avaliacos.each do |avaliaco| %>
+    <table>
+      <thead>
       <tr>
-        <td><%= avaliaco.avaliacao %></td>
-        <td><%= avaliaco.avaliado_id %></td>
-        <td><%= avaliaco.avaliador_id %></td>
-        <td><%= link_to 'Show', avaliaco %></td>
+        <th>Avaliacao</th>
+        <th>Avaliado</th>
+        <th>Avaliador</th>
+        <th colspan="3"></th>
       </tr>
-  <% end %>
-  </tbody>
-</table>
+      </thead>
+
+      <tbody>
+      <% @avaliacos.each do |avaliaco| %>
+          <tr>
+            <td><%= avaliaco.avaliacao %></td>
+            <td><%= avaliaco.avaliado_id %></td>
+            <td><%= avaliaco.avaliador_id %></td>
+            <td><%= link_to 'Show', avaliaco %></td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+
+<% else %>
+    <%= render 'main_page/erro_pagina_inacessivel' %>
+<% end %>

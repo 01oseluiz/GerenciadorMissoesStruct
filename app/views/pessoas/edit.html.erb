@@ -1,6 +1,16 @@
-<h1>Editar dados</h1>
+<% if pessoa_signed_in? and current_pessoa.tipo.downcase == "admin" %>
 
-<%= render 'form', pessoa: @pessoa %>
+    <%= flash_mensagem %>
 
-<%= link_to 'ver', @pessoa %> |
-<%= link_to 'Voltar', :back %>
+    <h1>Editar dados</h1>
+
+    <div id="demais_form_box">
+      <%= render 'form', pessoa: @pessoa %>
+    </div>
+
+    <%= link_to 'ver', @pessoa %> |
+    <%= link_to 'Voltar', :back %>
+
+<% else %>
+    <%= render 'main_page/erro_autenticar_admin' %>
+<% end %>

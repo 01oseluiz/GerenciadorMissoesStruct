@@ -1,3 +1,29 @@
 // Place all the styles related to the MainPage controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#top_banner{
+  float: left;
+  width: 100%;
+  margin-bottom: 110px;
+}
+
+#top_banner h1{
+
+}
+
+#melhores_equipes{
+  text-align: center;
+}
+
+#melhores_equipes h2{
+  margin-bottom: 40px;
+}
+
+#melhores_equipes table{
+  margin: auto;
+}
+
+#area_usuario h5{
+  margin: 10px 0px;
+}

@@ -1,6 +1,14 @@
-<h1>Editing Comentario</h1>
+<% if false %>
 
-<%= render 'form', comentario: @comentario %>
+    <%= flash_mensagem %>
 
-<%= link_to 'Show', @comentario %> |
-<%= link_to 'Back', :back %>
+    <h1>Editing Comentario</h1>
+
+    <%= render 'form', comentario: @comentario %>
+
+    <%= link_to 'Ver', @comentario %> |
+    <%= link_to 'Voltar', :back %>
+
+<% else %>
+    <%= render 'main_page/erro_pagina_inacessivel' %>
+<% end %>

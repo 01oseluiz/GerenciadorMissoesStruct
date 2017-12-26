@@ -1,27 +1,33 @@
-<p id="notice"><%= notice %></p>
+<% if false %>
 
-<h1>Rk Ninjas</h1>
+    <%= flash_mensagem %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Rank</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <h1>Rk Ninjas</h1>
 
-  <tbody>
-    <% @rk_ninjas.each do |rk_ninja| %>
+    <table>
+      <thead>
       <tr>
-        <td><%= rk_ninja.rank %></td>
-        <td><%= link_to 'Show', rk_ninja %></td>
-        <td><%= link_to 'Edit', edit_rk_ninja_path(rk_ninja) %></td>
-        <td><%= link_to 'Destroy', rk_ninja, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Rank</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+      </thead>
 
-<br>
+      <tbody>
+      <% @rk_ninjas.each do |rk_ninja| %>
+          <tr>
+            <td><%= rk_ninja.rank %></td>
+            <td><%= link_to 'Show', rk_ninja %></td>
+            <td><%= link_to 'Edit', edit_rk_ninja_path(rk_ninja) %></td>
+            <td><%= link_to 'Destroy', rk_ninja, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
 
-<%= link_to 'New Rk Ninja', new_rk_ninja_path %>
+    <br>
+
+    <%= link_to 'New Rk Ninja', new_rk_ninja_path %>
+
+<% else %>
+    <%= render 'main_page/erro_pagina_inacessivel' %>
+<% end %>
